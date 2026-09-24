@@ -1,0 +1,18 @@
+{
+  "title": "Business Performance Report",
+  "category": "Power BI · DAX · Power Query",
+  "description": "A downloadable Power BI report for exploring performance through interactive filters, KPI summaries, transformed source data, and time-based DAX calculations.",
+  "image": "assets/images/macbook.jpg",
+  "imageAlt": "Business Performance Power BI Report",
+  "order": 40,
+  "visible": true,
+  "wide": false,
+  "isNew": false,
+  "links": [
+    {
+      "label": "Download Project",
+      "url": "power-bi-projects-main.zip",
+      "download": true
+    }
+  ]
+}

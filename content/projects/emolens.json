@@ -1,0 +1,18 @@
+{
+  "title": "EmoLens — Facial Emotion Recognition",
+  "category": "Deep Learning & Computer Vision",
+  "description": "EfficientNet-B3 + CBAM attention model classifying 7 emotions at 92.6% accuracy across two combined, class-balanced datasets. Found and removed 931 leaked test images via MD5 deduplication, calibrated confidence with Temperature Scaling + TTA, and shipped with live camera, upload, and video-timeline modes.",
+  "image": "assets/images/emolens.jpg",
+  "imageAlt": "EmoLens Facial Emotion Recognition",
+  "order": 20,
+  "visible": true,
+  "wide": true,
+  "isNew": false,
+  "links": [
+    {
+      "label": "Live Demo",
+      "url": "https://facial-emotion-recognition-m.streamlit.app/",
+      "download": false
+    }
+  ]
+}

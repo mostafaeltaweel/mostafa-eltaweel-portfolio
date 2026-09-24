@@ -1,0 +1,18 @@
+{
+  "title": "Life Manager — Smart Excel System",
+  "category": "Excel · Dashboard · Data Automation",
+  "description": "Connected Arabic workbook unifying goals, habits, budget, savings, balance, gratitude, and settings in a single visual management system with validated inputs and automated summaries.",
+  "image": "assets/images/life-manager-dashboard.png",
+  "imageAlt": "Life Manager Arabic Excel dashboard",
+  "order": 60,
+  "visible": true,
+  "wide": true,
+  "isNew": true,
+  "links": [
+    {
+      "label": "Download Workbook",
+      "url": "%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx",
+      "download": true
+    }
+  ]
+}

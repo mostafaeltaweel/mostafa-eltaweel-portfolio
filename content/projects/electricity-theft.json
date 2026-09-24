@@ -1,0 +1,18 @@
+{
+  "title": "Electricity Theft Detection — Dual-Branch CNN-LSTM",
+  "category": "Machine Learning & Explainable AI",
+  "description": "AI-based smart-meter theft detector on the SGCC benchmark (18,193 consumers). Combines a CNN-LSTM temporal branch with 59 engineered statistical features, 12 synthetic theft-generation techniques, and threshold optimisation — reaching 91.2% accuracy and 96.9% AUC-ROC, deployed as a Streamlit risk-scoring app.",
+  "image": "assets/images/electricity-theft.jpg",
+  "imageAlt": "Electricity Theft Detection Dashboard",
+  "order": 10,
+  "visible": true,
+  "wide": true,
+  "isNew": false,
+  "links": [
+    {
+      "label": "Live Demo",
+      "url": "https://theft-electric-detection-c.streamlit.app/",
+      "download": false
+    }
+  ]
+}

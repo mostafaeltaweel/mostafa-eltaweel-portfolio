@@ -71,15 +71,15 @@
     </div>
     <div class="hero-content">
       <div class="hero-specialty">
-        <span>AI &amp; Data Analytics</span>
-        <small>Dashboards · Machine Learning · Automation</small>
+        <span>{{specialty}}</span>
+        <small>{{tagline}}</small>
       </div>
       <h1 class="hero-name">
         <span>Mostafa</span>
         <span>Eltaweel</span>
       </h1>
       <div class="hero-meta">
-        <div class="hero-role">I turn raw data into dashboards, intelligent applications, and automated workflows that people can actually use.</div>
+        <div class="hero-role">{{intro}}</div>
         <a href="#projects" class="hero-scroll-hint">
           <span class="scroll-line"></span>
           View selected work
@@ -126,11 +126,11 @@
         all day
       </div>
       <div class="intro-body">
-        <p class="reveal reveal-delay-1">I&#39;m a Data Analyst &amp; AI Developer building practical dashboards, analytical models, and intelligent applications with Power BI, SQL, Excel, Python, and machine learning.</p>
-        <p class="reveal reveal-delay-2">With a Bachelor of Laws from Cairo University, I bring a structured, evidence-based approach to every dataset. I prepare and validate data, build interactive dashboards, and translate business requirements into clear, actionable insights — certified in Microsoft Power BI (PL-300) and Google Data Analytics, with ongoing training in AI &amp; Machine Learning.</p>
+        <p class="reveal reveal-delay-1">{{about}}</p>
+        <p class="reveal reveal-delay-2">{{background}}</p>
         <div class="intro-stats">
           <div class="reveal reveal-delay-1">
-            <div class="stat-val" data-target="6">0</div>
+            <div class="stat-val" data-target="{{projectCount}}">0</div>
             <div class="stat-lbl">AI &amp; Data Projects</div>
           </div>
           <div class="reveal reveal-delay-2">
@@ -220,67 +220,7 @@
     </div>
 
     <div class="projects-grid">
-<div class="project-card wide reveal">
-    <img src="assets/images/electricity-theft.jpg" alt="Electricity Theft Detection Dashboard" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Machine Learning &amp; Explainable AI</div>
-      <div class="project-name">Electricity Theft Detection — Dual-Branch CNN-LSTM</div>
-      <div class="project-desc">AI-based smart-meter theft detector on the SGCC benchmark (18,193 consumers). Combines a CNN-LSTM temporal branch with 59 engineered statistical features, 12 synthetic theft-generation techniques, and threshold optimisation — reaching 91.2% accuracy and 96.9% AUC-ROC, deployed as a Streamlit risk-scoring app.</div>
-      <div class="project-links"><a href="https://theft-electric-detection-c.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">Live Demo</a></div>
-    </div>
-
-  </div>
-<div class="project-card wide reveal">
-    <img src="assets/images/emolens.jpg" alt="EmoLens Facial Emotion Recognition" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Deep Learning &amp; Computer Vision</div>
-      <div class="project-name">EmoLens — Facial Emotion Recognition</div>
-      <div class="project-desc">EfficientNet-B3 + CBAM attention model classifying 7 emotions at 92.6% accuracy across two combined, class-balanced datasets. Found and removed 931 leaked test images via MD5 deduplication, calibrated confidence with Temperature Scaling + TTA, and shipped with live camera, upload, and video-timeline modes.</div>
-      <div class="project-links"><a href="https://facial-emotion-recognition-m.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">Live Demo</a></div>
-    </div>
-
-  </div>
-<div class="project-card wide reveal">
-    <img src="assets/images/powerbi-survey.jpg" alt="Data Professional Survey Dashboard" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Power BI &amp; Business Analytics</div>
-      <div class="project-name">Data Professional Survey Dashboard</div>
-      <div class="project-desc">Interactive Power BI dashboard analysing career trends, compensation, and skills across 630 data professionals (avg. age 29.87) — geographic distribution, salary by job title, tool preferences by role, entry-barrier sentiment, and satisfaction gauges for work/life balance (5.74/10) and salary (4.27/10).</div>
-      <div class="project-links"><a href="assets/images/powerbi-survey-demo.mp4" target="_blank" rel="noopener noreferrer" class="project-btn primary">Watch Demo</a></div>
-    </div>
-
-  </div>
-<div class="project-card reveal">
-    <img src="assets/images/macbook.jpg" alt="Business Performance Power BI Report" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Power BI · DAX · Power Query</div>
-      <div class="project-name">Business Performance Report</div>
-      <div class="project-desc">A downloadable Power BI report for exploring performance through interactive filters, KPI summaries, transformed source data, and time-based DAX calculations.</div>
-      <div class="project-links"><a href="power-bi-projects-main.zip" download class="project-btn primary">Download Project</a></div>
-    </div>
-
-  </div>
-<div class="project-card wide reveal new-project">
-    <img src="assets/images/feed-calculator.png" alt="Feed Formulation Calculator PWA" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">React · PWA · Offline-first</div>
-      <div class="project-name">Feed Formulation Calculator</div>
-      <div class="project-desc">Arabic RTL application replacing spreadsheet-based feed formulation with instant nutritional calculations, cost analysis, saved recipes, protected admin controls, Excel/PDF export, and full offline support.</div>
-      <div class="project-links"><a href="https://mostafaeltaweel.github.io/feed-calculator-pwa/" target="_blank" rel="noopener noreferrer" class="project-btn primary">Live Demo</a>
-<a href="https://github.com/mostafaeltaweel/feed-calculator-pwa" target="_blank" rel="noopener noreferrer" class="project-btn">GitHub</a></div>
-    </div>
-    <span class="project-new-pill">New</span>
-  </div>
-<div class="project-card wide reveal new-project">
-    <img src="assets/images/life-manager-dashboard.png" alt="Life Manager Arabic Excel dashboard" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Excel · Dashboard · Data Automation</div>
-      <div class="project-name">Life Manager — Smart Excel System</div>
-      <div class="project-desc">Connected Arabic workbook unifying goals, habits, budget, savings, balance, gratitude, and settings in a single visual management system with validated inputs and automated summaries.</div>
-      <div class="project-links"><a href="%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx" download class="project-btn primary">Download Workbook</a></div>
-    </div>
-    <span class="project-new-pill">New</span>
-  </div>
+{{projects}}
     </div>
   </section>
 

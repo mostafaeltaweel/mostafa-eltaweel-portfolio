@@ -6,6 +6,15 @@
 
 Personal portfolio presenting practical work across data analytics, business intelligence, machine learning, computer vision, and workflow automation.
 
+## تعديل الموقع من GitHub
+
+ابدأ من [دليل التعديل بالعربي](EDITING-AR.md).
+
+- المشاريع: ملف لكل مشروع داخل [`content/projects`](content/projects).
+- التخصص والنبذة: [`content/site.json`](content/site.json).
+- باقي محتوى الصفحة: [`templates/index.html`](templates/index.html).
+- احفظ التغييرات على `main` لنشر الموقع تلقائيًا باستخدام GitHub Actions.
+
 ## Live website
 
 [mostafaeltaweel.github.io/mostafa-eltaweel-portfolio](https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/)
@@ -28,7 +37,8 @@ Personal portfolio presenting practical work across data analytics, business int
 
 ## Run locally
 
-Open `index.html` directly, or serve the directory with any static web server.
+Run `node scripts/build.mjs` with Node.js 22. Then open `index.html`, or serve `_site` with a static web server.
+The build validates project data and local image and download paths before deployment. Do not edit the generated `index.html`.
 
 ## Versioning
 
