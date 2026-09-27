@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {validateProject,validateSite,safeUrl,renderProject,renderCase} from '../app/content.mjs';
+const project=JSON.parse(fs.readFileSync(new URL('../content/projects/financial-fraud.json',import.meta.url)));
+const site=JSON.parse(fs.readFileSync(new URL('../content/site.json',import.meta.url)));
+test('all seven projects and profile validate',()=>{for(const file of fs.readdirSync(new URL('../content/projects/',import.meta.url)))validateProject(JSON.parse(fs.readFileSync(new URL(`../content/projects/${file}`,import.meta.url))));validateSite(site);});
+test('reject executable URLs, encoded traversal, protocols and malformed values',()=>{for(const url of ['javascript:alert(1)','data:text/html,hi','//evil.com','/admin/','%2f%2fevil.com','assets/%2e%2e/private','https://a.com\n','http://a.com','https://user:pass@a.com','assets/%5cfile'])assert.throws(()=>safeUrl(url),url);});
+test('allow local paths, Arabic encoded paths and HTTPS query strings',()=>{for(const url of ['assets/images/financial-fraud.png','%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx','https://example.com/project?view=all'])assert.equal(safeUrl(url),url);});
+test('escape project copy and attribute injection in all renderers',()=>{const p={...project,title:'<img src=x onerror=alert(1)>',imageAlt:'" onerror="alert(1)',outcome:'</p><script>alert(1)</script>'};assert.ok(!renderProject(p).includes('<img src=x'));assert.ok(!renderCase(p).includes('<script>'));assert.match(renderProject(p),/&quot; onerror=&quot;/);});
+test('reject malformed flags, order, duplicate semantics and unsafe profile contacts',()=>{assert.throws(()=>validateProject({...project,visible:'false'}));assert.throws(()=>validateProject({...project,order:-1}));assert.throws(()=>validateProject({...project,id:'bad id'}));assert.throws(()=>validateProject({...project,links:[{label:'X',url:'javascript:alert(1)',download:false}]}));assert.throws(()=>validateSite({...site,email:'a@b.com?bcc=evil@a.com'}));});
+test('new financial case identifies synthetic evidence and completed diploma',()=>{assert.match(project.limitations,/Synthetic data/);assert.match(project.outcome,/1,142/);assert.match(site.diplomaStatus,/Completed/);assert.match(site.diplomaStatus,/pending/);});

@@ -4,10 +4,10 @@
   "description": "Arabic RTL application replacing spreadsheet-based feed formulation with instant nutritional calculations, cost analysis, saved recipes, protected admin controls, Excel/PDF export, and full offline support.",
   "image": "assets/images/feed-calculator.png",
   "imageAlt": "Feed Formulation Calculator PWA",
-  "order": 50,
+  "order": 60,
   "visible": true,
   "wide": true,
-  "isNew": true,
+  "isNew": false,
   "links": [
     {
       "label": "Live Demo",
@@ -19,5 +19,11 @@
       "url": "https://github.com/mostafaeltaweel/feed-calculator-pwa",
       "download": false
     }
-  ]
+  ],
+  "id": "feed-calculator",
+  "group": "Tools & Automation",
+  "problem": "How can a spreadsheet-based formulation task become easier to use and repeat?",
+  "approach": "Built an Arabic RTL React PWA with nutritional calculations, cost analysis, saved recipes and spreadsheet/PDF export.",
+  "outcome": "A live application and source repository demonstrate how a calculation workflow can become an accessible tool.",
+  "limitations": "Calculations depend on the supplied ingredient data. Formulations require review by a qualified domain professional before practical use."
 }

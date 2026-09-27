@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mostafa Eltaweel — AI &amp; Data Analytics</title>
+  <title>Mostafa Eltaweel — Data Analyst &amp; Applied AI</title>
   <meta name="description" content="AI and Data Analytics portfolio by Mostafa Eltaweel — Power BI dashboards, machine learning applications, Python analytics, SQL, and n8n automation.">
 
   <!-- Favicon -->
@@ -11,20 +11,23 @@
 
   <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mostafa Eltaweel — AI &amp; Data Analytics">
+  <meta property="og:title" content="Mostafa Eltaweel — Data Analyst &amp; Applied AI">
   <meta property="og:description" content="Dashboards, machine learning applications, data products, and workflow automation built around real problems.">
-  <meta property="og:image" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/assets/images/powerbi-survey.jpg">
+  <meta property="og:image" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/assets/images/financial-fraud.png">
   <meta property="og:url" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/">
+  <link rel="canonical" href="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mostafa Eltaweel — AI &amp; Data Analytics">
+  <meta name="twitter:title" content="Mostafa Eltaweel — Data Analyst &amp; Applied AI">
   <meta name="twitter:description" content="Power BI, SQL, Python, machine learning, and automation projects.">
-  <meta name="twitter:image" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/assets/images/powerbi-survey.jpg">
+  <meta name="twitter:image" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/assets/images/financial-fraud.png">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
+  <a class="skip-link" href="#intro">Skip to content</a>
 
   <!-- Custom Cursor -->
   <div class="cursor-dot" id="cursor-dot"></div>
@@ -43,7 +46,7 @@
       <li><a href="#certifications">Certs</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta resume-cta">Resume</a>
+      <a data-url="resume" href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta resume-cta">Resume</a>
       <a href="#contact" class="nav-cta">Let's Connect</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-controls="mobile-nav" aria-expanded="false">
@@ -60,29 +63,30 @@
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#beyond" class="mobile-link">More</a>
     <a href="#certifications" class="mobile-link">Certs</a>
-    <a href="assets/Resume.pdf" class="mobile-link" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a data-url="resume" href="assets/Resume.pdf" class="mobile-link" target="_blank" rel="noopener noreferrer">Resume</a>
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
   <!-- ===== HERO ===== -->
   <section id="hero">
     <div class="hero-photo">
-      <img src="assets/images/portrait.png" alt="Mostafa Eltaweel">
+      <img data-image="portrait" src="assets/images/portrait.png" alt="Mostafa Eltaweel">
     </div>
     <div class="hero-content">
+      <div class="availability"><span class="status-dot"></span><span data-field="availability">Open to Data Analyst &amp; Junior BI opportunities</span></div>
       <div class="hero-specialty">
-        <span>AI &amp; Data Analytics</span>
-        <small>Dashboards · Machine Learning · Automation</small>
+        <span data-field="specialty">Data Analyst · Applied AI</span>
+        <small data-field="tagline">Power BI · SQL · Python</small>
       </div>
       <h1 class="hero-name">
         <span>Mostafa</span>
         <span>Eltaweel</span>
       </h1>
       <div class="hero-meta">
-        <div class="hero-role">I turn raw data into dashboards, intelligent applications, and automated workflows that people can actually use.</div>
+        <div data-field="intro" class="hero-role">I turn financial and operational data into clear dashboards, useful insights and practical AI prototypes.</div>
         <a href="#projects" class="hero-scroll-hint">
           <span class="scroll-line"></span>
-          View selected work
+          Explore my work
         </a>
       </div>
     </div>
@@ -121,16 +125,16 @@
     <div class="section-label">About me</div>
     <div class="intro-grid">
       <div class="intro-headline reveal">
-        Here's what I<br>
-        <em>actually do</em><br>
-        all day
+        Clear thinking.<br>
+        <em>Useful analysis.</em><br>
+        Practical tools.
       </div>
       <div class="intro-body">
-        <p class="reveal reveal-delay-1">I&#39;m a Data Analyst &amp; AI Developer building practical dashboards, analytical models, and intelligent applications with Power BI, SQL, Excel, Python, and machine learning.</p>
-        <p class="reveal reveal-delay-2">With a Bachelor of Laws from Cairo University, I bring a structured, evidence-based approach to every dataset. I prepare and validate data, build interactive dashboards, and translate business requirements into clear, actionable insights — certified in Microsoft Power BI (PL-300) and Google Data Analytics, with ongoing training in AI &amp; Machine Learning.</p>
+        <p data-field="about" class="reveal reveal-delay-1">I’m Mostafa, a data analyst based in Giza, Egypt. My focus is financial and operational analytics: preparing data, defining useful KPIs and building reports that make patterns easier to understand. I also build applied AI prototypes in Python.</p>
+        <p data-field="background" class="reveal reveal-delay-2">I completed the Applied AI &amp; Data Analysis diploma at Digilians and am awaiting the certificate. My background combines ERP technical support, a Bachelor of Laws from Cairo University, and Microsoft Power BI and Google Data Analytics credentials.</p>
         <div class="intro-stats">
           <div class="reveal reveal-delay-1">
-            <div class="stat-val" data-target="6">0</div>
+            <div class="stat-val" id="project-count" data-target="7">7</div>
             <div class="stat-lbl">AI &amp; Data Projects</div>
           </div>
           <div class="reveal reveal-delay-2">
@@ -138,8 +142,8 @@
             <div class="stat-lbl">Certifications</div>
           </div>
           <div class="reveal reveal-delay-3">
-            <div class="stat-val" data-target="18">0</div>
-            <div class="stat-lbl">K+ Consumers Analysed</div>
+            <div class="stat-val">BI + AI</div>
+            <div class="stat-lbl">Analysis through to application</div>
           </div>
         </div>
       </div>
@@ -158,7 +162,7 @@
         </h2>
       </div>
       <p class="services-sub reveal reveal-delay-1">
-        Three areas I can contribute in today, backed by the work shown below—not a generic list of tools.
+        Financial and operational reporting is my core focus. Applied AI and automation help me take the analysis further.
       </p>
     </div>
 
@@ -173,7 +177,7 @@
           <span class="capability-toggle" aria-hidden="true">−</span>
         </button>
         <div class="capability-panel" id="capability-analytics">
-          <p>I turn operational and ERP data into models, KPIs, and dashboards that answer specific business questions—not decorative charts.</p>
+          <p>I turn operational and ERP data into models, KPIs, and dashboards that answer specific business questions—with clearly defined metrics.</p>
           <div class="capability-proof"><span>What I deliver</span><b>Clean data models</b><b>Decision-ready dashboards</b><b>Repeatable reports</b></div>
         </div>
       </article>
@@ -215,72 +219,49 @@
     <div class="projects-header">
       <div>
         <div class="section-label">Selected work</div>
-        <h2 class="projects-headline reveal">Featured Projects</h2>
+        <h2 class="projects-headline reveal">Selected Projects</h2>
       </div>
     </div>
 
+    <p class="projects-intro">Independent portfolio work. Explore the question, approach, deliverable and limitations behind each project.</p>
+    <div class="project-controls" aria-label="Filter projects"><button class="filter-chip active" data-project-filter="all" aria-pressed="true">All work</button><button class="filter-chip" data-project-filter="Analytics &amp; BI" aria-pressed="false">Analytics &amp; BI</button><button class="filter-chip" data-project-filter="Applied AI" aria-pressed="false">Applied AI</button><button class="filter-chip" data-project-filter="Tools &amp; Automation" aria-pressed="false">Tools &amp; Automation</button></div>
+    <p id="portfolio-status" class="portfolio-status" role="status" hidden></p>
     <div class="projects-grid">
-<div class="project-card wide reveal">
-    <img src="assets/images/electricity-theft.jpg" alt="Electricity Theft Detection Dashboard" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Machine Learning &amp; Explainable AI</div>
-      <div class="project-name">Electricity Theft Detection — Dual-Branch CNN-LSTM</div>
-      <div class="project-desc">AI-based smart-meter theft detector on the SGCC benchmark (18,193 consumers). Combines a CNN-LSTM temporal branch with 59 engineered statistical features, 12 synthetic theft-generation techniques, and threshold optimisation — reaching 91.2% accuracy and 96.9% AUC-ROC, deployed as a Streamlit risk-scoring app.</div>
-      <div class="project-links"><a href="https://theft-electric-detection-c.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">Live Demo</a></div>
-    </div>
-
-  </div>
-<div class="project-card wide reveal">
-    <img src="assets/images/emolens.jpg" alt="EmoLens Facial Emotion Recognition" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Deep Learning &amp; Computer Vision</div>
-      <div class="project-name">EmoLens — Facial Emotion Recognition</div>
-      <div class="project-desc">EfficientNet-B3 + CBAM attention model classifying 7 emotions at 92.6% accuracy across two combined, class-balanced datasets. Found and removed 931 leaked test images via MD5 deduplication, calibrated confidence with Temperature Scaling + TTA, and shipped with live camera, upload, and video-timeline modes.</div>
-      <div class="project-links"><a href="https://facial-emotion-recognition-m.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-btn primary">Live Demo</a></div>
-    </div>
-
-  </div>
-<div class="project-card wide reveal">
-    <img src="assets/images/powerbi-survey.jpg" alt="Data Professional Survey Dashboard" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Power BI &amp; Business Analytics</div>
-      <div class="project-name">Data Professional Survey Dashboard</div>
-      <div class="project-desc">Interactive Power BI dashboard analysing career trends, compensation, and skills across 630 data professionals (avg. age 29.87) — geographic distribution, salary by job title, tool preferences by role, entry-barrier sentiment, and satisfaction gauges for work/life balance (5.74/10) and salary (4.27/10).</div>
-      <div class="project-links"><a href="assets/images/powerbi-survey-demo.mp4" target="_blank" rel="noopener noreferrer" class="project-btn primary">Watch Demo</a></div>
-    </div>
-
-  </div>
-<div class="project-card reveal">
-    <img src="assets/images/macbook.jpg" alt="Business Performance Power BI Report" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Power BI · DAX · Power Query</div>
-      <div class="project-name">Business Performance Report</div>
-      <div class="project-desc">A downloadable Power BI report for exploring performance through interactive filters, KPI summaries, transformed source data, and time-based DAX calculations.</div>
-      <div class="project-links"><a href="power-bi-projects-main.zip" download class="project-btn primary">Download Project</a></div>
-    </div>
-
-  </div>
-<div class="project-card wide reveal new-project">
-    <img src="assets/images/feed-calculator.png" alt="Feed Formulation Calculator PWA" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">React · PWA · Offline-first</div>
-      <div class="project-name">Feed Formulation Calculator</div>
-      <div class="project-desc">Arabic RTL application replacing spreadsheet-based feed formulation with instant nutritional calculations, cost analysis, saved recipes, protected admin controls, Excel/PDF export, and full offline support.</div>
-      <div class="project-links"><a href="https://mostafaeltaweel.github.io/feed-calculator-pwa/" target="_blank" rel="noopener noreferrer" class="project-btn primary">Live Demo</a>
-<a href="https://github.com/mostafaeltaweel/feed-calculator-pwa" target="_blank" rel="noopener noreferrer" class="project-btn">GitHub</a></div>
-    </div>
-    <span class="project-new-pill">New</span>
-  </div>
-<div class="project-card wide reveal new-project">
-    <img src="assets/images/life-manager-dashboard.png" alt="Life Manager Arabic Excel dashboard" loading="lazy">
-    <div class="project-overlay">
-      <div class="project-tag">Excel · Dashboard · Data Automation</div>
-      <div class="project-name">Life Manager — Smart Excel System</div>
-      <div class="project-desc">Connected Arabic workbook unifying goals, habits, budget, savings, balance, gratitude, and settings in a single visual management system with validated inputs and automated summaries.</div>
-      <div class="project-links"><a href="%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx" download class="project-btn primary">Download Workbook</a></div>
-    </div>
-    <span class="project-new-pill">New</span>
-  </div>
+<article class="project-card visible wide" data-group="Analytics &amp; BI" id="project-financial-fraud">
+    <a class="project-image-link" href="?project=financial-fraud#projects" data-case="financial-fraud" aria-label="Read Financial Fraud Analytics case study"><img src="assets/images/financial-fraud.png" alt="Financial fraud dashboard showing transaction totals, labeled fraud cases and fraud rates by transaction type" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">Power BI · Financial Analytics</div><h3 class="project-name">Financial Fraud Analytics</h3><p class="project-desc">Explore transaction patterns and fraud labels in synthetic financial data. A Power BI report with transaction-type filters, KPI summaries and time-based views.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="financial-fraud" href="?project=financial-fraud#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="assets/downloads/Synthetic_Financial_datasets.pbix" download>Download Power BI · 62 MB <span aria-hidden="true">↗</span></a></div></div>
+    <span class="project-new-pill">New work</span></article>
+<article class="project-card visible wide" data-group="Analytics &amp; BI" id="project-powerbi-survey">
+    <a class="project-image-link" href="?project=powerbi-survey#projects" data-case="powerbi-survey" aria-label="Read Data Professional Survey Dashboard case study"><img src="assets/images/powerbi-survey.jpg" alt="Data Professional Survey Dashboard" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">Power BI &amp; Business Analytics</div><h3 class="project-name">Data Professional Survey Dashboard</h3><p class="project-desc">A Power BI dashboard exploring compensation, tools and career satisfaction across a survey of 630 data professionals.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="powerbi-survey" href="?project=powerbi-survey#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="assets/images/powerbi-survey-demo.mp4" target="_blank" rel="noopener noreferrer">Watch Demo <span aria-hidden="true">↗</span></a></div></div>
+    </article>
+<article class="project-card visible wide" data-group="Applied AI" id="project-electricity-theft">
+    <a class="project-image-link" href="?project=electricity-theft#projects" data-case="electricity-theft" aria-label="Read Electricity Theft Detection case study"><img src="assets/images/electricity-theft.jpg" alt="Electricity Theft Detection Dashboard" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">Machine Learning &amp; Explainable AI</div><h3 class="project-name">Electricity Theft Detection</h3><p class="project-desc">A Streamlit prototype for exploring smart-meter risk with a dual-branch CNN-LSTM model and engineered consumption features.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="electricity-theft" href="?project=electricity-theft#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="https://theft-electric-detection-c.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a></div></div>
+    </article>
+<article class="project-card visible wide" data-group="Applied AI" id="project-emolens">
+    <a class="project-image-link" href="?project=emolens#projects" data-case="emolens" aria-label="Read EmoLens — Facial Emotion Recognition case study"><img src="assets/images/emolens.jpg" alt="EmoLens Facial Emotion Recognition" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">Deep Learning &amp; Computer Vision</div><h3 class="project-name">EmoLens — Facial Emotion Recognition</h3><p class="project-desc">A computer-vision prototype with image, camera and video inputs, built around EfficientNet-B3 and attention-based classification.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="emolens" href="?project=emolens#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="https://facial-emotion-recognition-m.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a></div></div>
+    </article>
+<article class="project-card visible" data-group="Analytics &amp; BI" id="project-business-performance">
+    <a class="project-image-link" href="?project=business-performance#projects" data-case="business-performance" aria-label="Read Business Performance Report case study"><img src="assets/images/macbook.jpg" alt="Business Performance Power BI Report" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">Power BI · DAX · Power Query</div><h3 class="project-name">Business Performance Report</h3><p class="project-desc">A downloadable Power BI report for exploring performance through interactive filters, KPI summaries, transformed source data, and time-based DAX calculations.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="business-performance" href="?project=business-performance#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="power-bi-projects-main.zip" download>Download Project <span aria-hidden="true">↗</span></a></div></div>
+    </article>
+<article class="project-card visible wide" data-group="Tools &amp; Automation" id="project-feed-calculator">
+    <a class="project-image-link" href="?project=feed-calculator#projects" data-case="feed-calculator" aria-label="Read Feed Formulation Calculator case study"><img src="assets/images/feed-calculator.png" alt="Feed Formulation Calculator PWA" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">React · PWA · Offline-first</div><h3 class="project-name">Feed Formulation Calculator</h3><p class="project-desc">Arabic RTL application replacing spreadsheet-based feed formulation with instant nutritional calculations, cost analysis, saved recipes, protected admin controls, Excel/PDF export, and full offline support.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="feed-calculator" href="?project=feed-calculator#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="https://mostafaeltaweel.github.io/feed-calculator-pwa/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a></div></div>
+    </article>
+<article class="project-card visible wide" data-group="Tools &amp; Automation" id="project-life-manager">
+    <a class="project-image-link" href="?project=life-manager#projects" data-case="life-manager" aria-label="Read Life Manager — Smart Excel System case study"><img src="assets/images/life-manager-dashboard.png" alt="Life Manager Arabic Excel dashboard" loading="lazy" width="1330" height="742"></a>
+    <div class="project-overlay"><div class="project-tag">Excel · Dashboard · Data Automation</div><h3 class="project-name">Life Manager — Smart Excel System</h3><p class="project-desc">Connected Arabic workbook unifying goals, habits, budget, savings, balance, gratitude, and settings in a single visual management system with validated inputs and automated summaries.</p>
+    <div class="project-links"><a class="project-btn primary" data-case="life-manager" href="?project=life-manager#projects">Case study <span aria-hidden="true">↗</span></a><a class="project-btn primary" href="%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx" download>Download Workbook <span aria-hidden="true">↗</span></a></div></div>
+    </article>
     </div>
   </section>
 
@@ -346,7 +327,7 @@
     <div class="testimonials-label">My background</div>
 
     <div class="experience-heading reveal">
-      <h2>Work, education<br><em>&amp; ongoing training</em></h2>
+      <h2>Work, education<br><em>&amp; professional training</em></h2>
       <p>The experience behind my approach to data: operational support, structured analysis, and continuous technical learning.</p>
     </div>
 
@@ -377,12 +358,12 @@
 
       <div class="testimonial-card reveal reveal-delay-2">
         <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M11 20V4M18 20v-7"/></svg></div>
-        <p class="testimonial-quote">Ongoing professional training in Power BI, SQL, Python, and Excel—applying statistics, data cleaning, machine learning, and neural networks to real-world dashboards and datasets.</p>
+        <p class="testimonial-quote"><span data-field="diplomaDescription">Completed professional training in applied AI and data analysis, with practical work across Power BI, SQL, Python, statistics and machine learning. Awaiting the issued certificate.</span></p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">DG</div>
           <div>
             <div class="testimonial-name">Digilians</div>
-            <div class="testimonial-role">Military Diploma — Data Analytics &amp; AI · Dec 2025 – Present</div>
+            <div class="testimonial-role"><span data-field="diploma">Applied AI &amp; Data Analysis Diploma</span> · <span data-field="diplomaStatus">Completed · Certificate pending</span></div>
           </div>
         </div>
       </div>
@@ -393,7 +374,7 @@
   <section id="beyond">
     <div class="beyond-grid">
       <div class="beyond-image">
-        <img src="assets/images/portrait.png" alt="Beyond the portfolio" loading="lazy">
+        <img data-image="portrait" src="assets/images/portrait.png" alt="Beyond the portfolio" loading="lazy">
       </div>
       <div class="beyond-content">
         <div class="section-label">Beyond the portfolio</div>
@@ -406,7 +387,7 @@
             <div class="beyond-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5 12 4l10 4.5-10 4.5-10-4.5z"/><path d="M6 10.7v4.6c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.6"/><path d="M22 8.5v6"/></svg></div>
             <div class="beyond-item-text">
               <h4>Continuous Learner</h4>
-              <p>Currently completing a Military Diploma in Data Analytics &amp; AI at Digilians, on top of Microsoft and Google certifications.</p>
+              <p><span data-field="trainingSummary">Applied AI &amp; Data Analysis diploma completed at Digilians. Certificate pending; Microsoft Power BI and Google Data Analytics credentials are listed below.</span></p>
             </div>
           </li>
           <li class="beyond-item reveal reveal-delay-1">
@@ -446,7 +427,7 @@
         </h2>
       </div>
       <p class="certs-sub reveal reveal-delay-1">
-        Certified in Microsoft Power BI Data Analytics (PL-300) and Google Data Analytics — with ongoing professional training in Data Analytics &amp; Artificial Intelligence.
+        <span data-field="trainingSummary">Applied AI &amp; Data Analysis diploma completed at Digilians. Certificate pending; Microsoft Power BI and Google Data Analytics credentials are listed below.</span>
       </p>
     </div>
 
@@ -455,7 +436,7 @@
       <button class="cert-filter active" data-filter="all">All</button>
       <button class="cert-filter" data-filter="microsoft">Microsoft</button>
       <button class="cert-filter" data-filter="google">Google</button>
-      <button class="cert-filter" data-filter="digilians">In Progress</button>
+      <button class="cert-filter" data-filter="digilians">Diploma</button>
     </div>
 
     <div class="certs-grid">
@@ -506,7 +487,7 @@
         <div class="cert-meta">
           <span class="cert-date">Issued Apr 2026</span>
         </div>
-        <p class="cert-desc">Nine-course program covering the full analytics workflow — Ask → Prepare → Process → Analyze → Share → Act — including spreadsheets, SQL, Tableau, Python for data analysis, and a capstone case study.</p>
+        <p class="cert-desc">Professional certificate covering the analytics workflow: asking useful questions, preparing and analyzing data, and communicating findings through visualizations and a capstone project.</p>
         <div class="cert-skills">
           <span class="cert-skill-tag">SQL</span>
           <span class="cert-skill-tag">Python</span>
@@ -519,23 +500,23 @@
         </a>
       </div>
 
-      <!-- ========== DIGILIANS: Military Diploma — In Progress ========== -->
-      <div class="cert-card in-progress reveal reveal-delay-2" data-issuer="digilians">
+      <!-- ========== DIGILIANS: Completed diploma, certificate pending ========== -->
+      <div class="cert-card reveal reveal-delay-2" data-issuer="digilians">
         <div class="cert-badge">
           <div class="cert-issuer-logo digilians">DG</div>
-          <span class="cert-progress-pill"><span class="dot"></span>In Progress</span>
+          <span class="cert-progress-pill"><span class="dot"></span><span data-field="diplomaStatus">Completed · Certificate pending</span></span>
         </div>
         <div class="cert-image-slot no-img">
           <div class="cert-img-placeholder" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
           </div>
         </div>
-        <h3 class="cert-name">Military Diploma — Data Analytics &amp; AI</h3>
+        <h3 class="cert-name"><span data-field="diploma">Applied AI &amp; Data Analysis Diploma</span></h3>
         <div class="cert-issuer">Digilians</div>
         <div class="cert-meta">
-          <span class="cert-date">Dec 2025 – Present</span>
+          <span class="cert-date"><span data-field="diplomaStatus">Completed · Certificate pending</span></span>
         </div>
-        <p class="cert-desc">Ongoing professional training covering Power BI, SQL, Python, statistics, machine learning and neural networks, applied through hands-on dashboards, data models, and real datasets.</p>
+        <p class="cert-desc"><span data-field="diplomaDescription">Completed professional training in applied AI and data analysis, with practical work across Power BI, SQL, Python, statistics and machine learning. Awaiting the issued certificate.</span></p>
         <div class="cert-skills">
           <span class="cert-skill-tag">Statistics</span>
           <span class="cert-skill-tag">Machine Learning</span>
@@ -556,34 +537,35 @@
           <span>connect</span>
         </h2>
         <div class="contact-details">
-          <a href="mailto:mostafa.eltaweel000@gmail.com" class="contact-link">
+          <a data-contact="email" href="mailto:mostafa.eltaweel000@gmail.com" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></span>
-            mostafa.eltaweel000@gmail.com
+            <span data-field="email">mostafa.eltaweel000@gmail.com</span>
           </a>
-          <a href="tel:+201112611898" class="contact-link">
+          <a data-contact="phone" href="tel:+201112611898" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3.5h4l1.8 4.6-2.4 1.7a13.5 13.5 0 0 0 6.3 6.3l1.7-2.4 4.6 1.8v4a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 3 5.1a1.5 1.5 0 0 1 1.5-1.6z"/></svg></span>
-            +20 111 261 1898
+            <span data-field="phone">+201112611898</span>
           </a>
-          <a href="https://www.linkedin.com/in/mostafa-eltaweel/" target="_blank" class="contact-link">
+          <a data-url="linkedin" href="https://www.linkedin.com/in/mostafa-eltaweel/" target="_blank" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="8.5" width="3.5" height="12" rx="0.5"/><circle cx="4.75" cy="4.5" r="2"/><path d="M10.5 8.5H14v1.9c.7-1.3 2.2-2.2 4-2.2 3.3 0 4.5 2 4.5 5.4V20.5h-3.5v-6.3c0-1.6-.6-2.7-2-2.7-1.1 0-1.8.8-2.1 1.5-.1.3-.1.6-.1 1v6.5h-3.5c0-.1.1-11 0-12z"/></svg></span>
-            linkedin.com/in/mostafa-eltaweel
+            LinkedIn profile
           </a>
-          <a href="https://github.com/mostafaeltaweel" target="_blank" class="contact-link">
+          <a data-url="github" href="https://github.com/mostafaeltaweel" target="_blank" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.5 0-5.5-4.5-10-10-10z"/></svg></span>
-            github.com/mostafaeltaweel
+            GitHub profile
           </a>
           <div class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-            Giza, Egypt
+            <span data-field="location">Giza, Egypt · Open to remote and on-site roles</span>
           </div>
         </div>
-        <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="submit-btn resume-download-btn">
+        <a data-url="resume" href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="submit-btn resume-download-btn">
           Download Resume
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         </a>
       </div>
       <div class="contact-right">
-        <h3 class="contact-form-title">Send a message</h3>
+        <h3 class="contact-form-title">Let’s discuss your next project</h3>
+        <p class="contact-note">Hiring for a data role or need a dashboard? Share the problem, available data and timeline. This form opens your email app.</p>
         <form id="contact-form" action="mailto:mostafa.eltaweel000@gmail.com" method="POST" data-email-fallback="true">
           <div class="form-field">
             <label for="name">Your Name</label>
@@ -602,7 +584,7 @@
             <textarea id="message" name="message" placeholder="Tell me about your project…" required></textarea>
           </div>
           <button type="submit" class="submit-btn" id="contact-submit-btn">
-            <span class="btn-label">Send Message</span>
+            <span class="btn-label">Open email draft</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -617,14 +599,17 @@
   <footer>
     <p class="footer-copy">© 2026 Mostafa Eltaweel — All rights reserved</p>
     <div class="footer-socials">
-      <a href="https://www.linkedin.com/in/mostafa-eltaweel/" target="_blank" class="footer-social-link">LinkedIn</a>
-      <a href="https://github.com/mostafaeltaweel" target="_blank" class="footer-social-link">GitHub</a>
-      <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-social-link">Resume</a>
-      <a href="mailto:mostafa.eltaweel000@gmail.com" class="footer-social-link">Email</a>
-      <a href="tel:+201112611898" class="footer-social-link">Call</a>
+      <a data-url="linkedin" href="https://www.linkedin.com/in/mostafa-eltaweel/" target="_blank" class="footer-social-link">LinkedIn</a>
+      <a data-url="github" href="https://github.com/mostafaeltaweel" target="_blank" class="footer-social-link">GitHub</a>
+      <a data-url="resume" href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-social-link">Resume</a>
+      <a data-contact="email" href="mailto:mostafa.eltaweel000@gmail.com" class="footer-social-link">Email</a>
+      <a data-contact="phone" href="tel:+201112611898" class="footer-social-link">Call</a>
     </div>
   </footer>
 
+  <dialog id="case-dialog" aria-labelledby="case-title"><button class="dialog-close" type="button" aria-label="Close case study">×</button><div id="case-content"></div></dialog>
+  <script id="portfolio-seed" type="application/json">{"site":{"specialty":"Data Analyst · Applied AI","tagline":"Power BI · SQL · Python","intro":"I turn financial and operational data into clear dashboards, useful insights and practical AI prototypes.","availability":"Open to Data Analyst & Junior BI opportunities","about":"I’m Mostafa, a data analyst based in Giza, Egypt. My focus is financial and operational analytics: preparing data, defining useful KPIs and building reports that make patterns easier to understand. I also build applied AI prototypes in Python.","background":"I completed the Applied AI & Data Analysis diploma at Digilians and am awaiting the certificate. My background combines ERP technical support, a Bachelor of Laws from Cairo University, and Microsoft Power BI and Google Data Analytics credentials.","email":"mostafa.eltaweel000@gmail.com","phone":"+201112611898","location":"Giza, Egypt · Open to remote and on-site roles","linkedin":"https://www.linkedin.com/in/mostafa-eltaweel/","github":"https://github.com/mostafaeltaweel","resume":"assets/Resume.pdf","portrait":"assets/images/portrait.png","diploma":"Applied AI & Data Analysis Diploma","diplomaStatus":"Completed · Certificate pending","diplomaDescription":"Completed professional training in applied AI and data analysis, with practical work across Power BI, SQL, Python, statistics and machine learning. Awaiting the issued certificate.","trainingSummary":"Applied AI & Data Analysis diploma completed at Digilians. Certificate pending; Microsoft Power BI and Google Data Analytics credentials are listed below."},"projects":[{"id":"financial-fraud","title":"Financial Fraud Analytics","category":"Power BI · Financial Analytics","group":"Analytics & BI","description":"Explore transaction patterns and fraud labels in synthetic financial data. A Power BI report with transaction-type filters, KPI summaries and time-based views.","image":"assets/images/financial-fraud.png","imageAlt":"Financial fraud dashboard showing transaction totals, labeled fraud cases and fraud rates by transaction type","order":10,"visible":true,"wide":true,"isNew":true,"problem":"Where are fraud-labeled transactions concentrated, and how do transaction types compare in a synthetic financial dataset?","approach":"Built a Power BI report with measures for transaction count, transaction amount, fraud count, fraud rate and fraud-labeled amount. Added transaction-type filters, comparisons and simulation-time views.","outcome":"The supplied report snapshot shows about 1.049 million transactions and 1,142 fraud-labeled transactions (0.11%). The visible fraud cases are in CASH_OUT (578) and TRANSFER (564). The report file is available for inspection in Power BI Desktop.","limitations":"Synthetic data for portfolio analysis. Counts describe the supplied screenshot and its filter state, not a live financial system. Fraud-labeled amount is not money recovered or fraud prevented. Time-axis sorting and rate denominators should be checked before operational interpretation.","links":[{"label":"Download Power BI · 62 MB","url":"assets/downloads/Synthetic_Financial_datasets.pbix","download":true},{"label":"View dashboard image","url":"assets/images/financial-fraud.png","download":false}]},{"title":"Data Professional Survey Dashboard","category":"Power BI & Business Analytics","description":"A Power BI dashboard exploring compensation, tools and career satisfaction across a survey of 630 data professionals.","image":"assets/images/powerbi-survey.jpg","imageAlt":"Data Professional Survey Dashboard","order":20,"visible":true,"wide":true,"isNew":false,"links":[{"label":"Watch Demo","url":"assets/images/powerbi-survey-demo.mp4","download":false}],"id":"powerbi-survey","group":"Analytics & BI","problem":"What patterns in roles, compensation and career satisfaction appear in a data-professional survey?","approach":"Presented geographic distribution, salary by role, tool preferences and satisfaction measures in an interactive dashboard.","outcome":"A visual summary that lets viewers compare the survey responses. A recorded walkthrough is available.","limitations":"A self-reported survey reflects its respondents and sampling limits. It is not a representative salary benchmark for every market."},{"title":"Electricity Theft Detection","category":"Machine Learning & Explainable AI","description":"A Streamlit prototype for exploring smart-meter risk with a dual-branch CNN-LSTM model and engineered consumption features.","image":"assets/images/electricity-theft.jpg","imageAlt":"Electricity Theft Detection Dashboard","order":30,"visible":true,"wide":true,"isNew":false,"links":[{"label":"Live Demo","url":"https://theft-electric-detection-c.streamlit.app/","download":false}],"id":"electricity-theft","group":"Applied AI","problem":"How can electricity-consumption patterns help prioritize unusual meters for review?","approach":"Combined temporal modeling with engineered statistical features and packaged the model in a Streamlit risk-scoring interface.","outcome":"An interactive demonstration of the workflow from consumption data to a model-assisted risk score.","limitations":"Portfolio prototype using benchmark and simulated theft scenarios. A risk score is not proof of theft. Model performance must be reviewed against the evaluation protocol before operational use."},{"title":"EmoLens — Facial Emotion Recognition","category":"Deep Learning & Computer Vision","description":"A computer-vision prototype with image, camera and video inputs, built around EfficientNet-B3 and attention-based classification.","image":"assets/images/emolens.jpg","imageAlt":"EmoLens Facial Emotion Recognition","order":40,"visible":true,"wide":true,"isNew":false,"links":[{"label":"Live Demo","url":"https://facial-emotion-recognition-m.streamlit.app/","download":false}],"id":"emolens","group":"Applied AI","problem":"How can a trained image classifier be made accessible through an interactive application?","approach":"Used EfficientNet-B3 with CBAM attention, dataset deduplication and confidence calibration, then added camera, upload and video interfaces.","outcome":"An end-to-end demonstration of model integration, prediction presentation and multiple input formats.","limitations":"Predicted facial-expression labels do not establish a person’s internal emotional state. This is a learning prototype, not a clinical or employment assessment tool."},{"title":"Business Performance Report","category":"Power BI · DAX · Power Query","description":"A downloadable Power BI report for exploring performance through interactive filters, KPI summaries, transformed source data, and time-based DAX calculations.","image":"assets/images/macbook.jpg","imageAlt":"Business Performance Power BI Report","order":50,"visible":true,"wide":false,"isNew":false,"links":[{"label":"Download Project","url":"power-bi-projects-main.zip","download":true}],"id":"business-performance","group":"Analytics & BI","problem":"How can business performance be reviewed through a reusable reporting view?","approach":"Created a Power BI report with Power Query transformations, DAX measures, filters and KPI summaries.","outcome":"A downloadable report for inspecting the analysis and interacting with the available filters.","limitations":"Portfolio work. No client results or independently measured business savings are claimed."},{"title":"Feed Formulation Calculator","category":"React · PWA · Offline-first","description":"Arabic RTL application replacing spreadsheet-based feed formulation with instant nutritional calculations, cost analysis, saved recipes, protected admin controls, Excel/PDF export, and full offline support.","image":"assets/images/feed-calculator.png","imageAlt":"Feed Formulation Calculator PWA","order":60,"visible":true,"wide":true,"isNew":false,"links":[{"label":"Live Demo","url":"https://mostafaeltaweel.github.io/feed-calculator-pwa/","download":false},{"label":"GitHub","url":"https://github.com/mostafaeltaweel/feed-calculator-pwa","download":false}],"id":"feed-calculator","group":"Tools & Automation","problem":"How can a spreadsheet-based formulation task become easier to use and repeat?","approach":"Built an Arabic RTL React PWA with nutritional calculations, cost analysis, saved recipes and spreadsheet/PDF export.","outcome":"A live application and source repository demonstrate how a calculation workflow can become an accessible tool.","limitations":"Calculations depend on the supplied ingredient data. Formulations require review by a qualified domain professional before practical use."},{"title":"Life Manager — Smart Excel System","category":"Excel · Dashboard · Data Automation","description":"Connected Arabic workbook unifying goals, habits, budget, savings, balance, gratitude, and settings in a single visual management system with validated inputs and automated summaries.","image":"assets/images/life-manager-dashboard.png","imageAlt":"Life Manager Arabic Excel dashboard","order":70,"visible":true,"wide":true,"isNew":false,"links":[{"label":"Download Workbook","url":"%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx","download":true}],"id":"life-manager","group":"Tools & Automation","problem":"How can personal goals, habits and budgets be tracked in one connected workbook?","approach":"Organized an Arabic Excel system around validated inputs and linked summaries for goals, savings and everyday tracking.","outcome":"A downloadable workbook with a dashboard and coordinated tracking sheets.","limitations":"A personal-productivity demonstration. Financial entries and outcomes depend on the user’s own inputs."}]}</script>
   <script src="script.js"></script>
+  <script type="module" src="app/public.mjs"></script>
 </body>
 </html>

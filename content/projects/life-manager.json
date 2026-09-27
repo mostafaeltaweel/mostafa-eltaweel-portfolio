@@ -4,15 +4,21 @@
   "description": "Connected Arabic workbook unifying goals, habits, budget, savings, balance, gratitude, and settings in a single visual management system with validated inputs and automated summaries.",
   "image": "assets/images/life-manager-dashboard.png",
   "imageAlt": "Life Manager Arabic Excel dashboard",
-  "order": 60,
+  "order": 70,
   "visible": true,
   "wide": true,
-  "isNew": true,
+  "isNew": false,
   "links": [
     {
       "label": "Download Workbook",
       "url": "%D9%85%D8%AF%D9%8A%D8%B1%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87/outputs/life-manager/Life_Manager.xlsx",
       "download": true
     }
-  ]
+  ],
+  "id": "life-manager",
+  "group": "Tools & Automation",
+  "problem": "How can personal goals, habits and budgets be tracked in one connected workbook?",
+  "approach": "Organized an Arabic Excel system around validated inputs and linked summaries for goals, savings and everyday tracking.",
+  "outcome": "A downloadable workbook with a dashboard and coordinated tracking sheets.",
+  "limitations": "A personal-productivity demonstration. Financial entries and outcomes depend on the user’s own inputs."
 }

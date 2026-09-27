@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {validateProject,validateSite} from '../app/content.mjs';
+const file=process.argv[2];
+if(!file)throw new Error('Usage: node scripts/restore.mjs path/to/backup.json');
+const backup=JSON.parse(fs.readFileSync(file,'utf8'));
+if(backup.version!==1||!Array.isArray(backup.projects))throw new Error('Unsupported backup format.');
+validateSite(backup.site);backup.projects.forEach(validateProject);
+if(new Set(backup.projects.map(p=>p.id)).size!==backup.projects.length)throw new Error('Duplicate project ids.');
+const literal=value=>`'${JSON.stringify(value).replaceAll("'","''")}'::jsonb`;
+const sql=['-- Review before running. Matching records will be replaced. Other records stay unchanged.','begin;',`insert into public.portfolio_site(id,data) values ('main',${literal(backup.site)}) on conflict(id) do update set data=excluded.data;`,...backup.projects.map(p=>`insert into public.portfolio_projects(id,data) values ('${p.id}',${literal(p)}) on conflict(id) do update set data=excluded.data;`),'commit;'];
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+fs.writeFileSync(path.join(root,'supabase/restore.sql'),sql.join('\n')+'\n');
+console.log('Created supabase/restore.sql for review. No database changes were made.');

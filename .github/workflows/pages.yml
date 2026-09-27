@@ -27,8 +27,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test content and build behavior
+        run: node --test tests/*.test.mjs
       - name: Validate content and build website
         run: node scripts/build.mjs
+        env:
+          PUBLIC_SUPABASE_URL: ${{ vars.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ vars.PUBLIC_SUPABASE_ANON_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

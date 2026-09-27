@@ -1,2 +1,10 @@
 _site/
 node_modules/
+config.json
+.env
+.env.*
+!.env.example
+.vercel/
+artifacts/
+tmp/
+supabase/restore.sql

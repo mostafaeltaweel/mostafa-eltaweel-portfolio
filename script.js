@@ -85,10 +85,10 @@ if ('IntersectionObserver' in window && !reduceMotion) {
 
 /* ===================== STAT COUNTERS ===================== */
 function animateCounter(el) {
-  const target = parseInt(el.getAttribute('data-target'));
   const start  = performance.now();
   const dur    = 2000;
   function tick(now) {
+    const target = parseInt(el.getAttribute('data-target'));
     const p = Math.min((now - start) / dur, 1);
     const ease = 1 - Math.pow(1 - p, 4);
     el.textContent = Math.floor(ease * target);
@@ -138,10 +138,10 @@ if (form) {
   const btn = document.getElementById('contact-submit-btn');
   const btnLabel = btn.querySelector('.btn-label');
   const status = document.getElementById('contact-form-status');
-  const CONTACT_EMAIL = 'mostafa.eltaweel000@gmail.com';
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
+    const CONTACT_EMAIL = form.getAttribute('action').replace(/^mailto:/, '');
 
     // Static-site fallback: open a pre-filled email without pretending it was sent.
     if (form.dataset.emailFallback === 'true') {

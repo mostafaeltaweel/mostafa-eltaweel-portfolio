@@ -1,0 +1,29 @@
+{
+  "id": "financial-fraud",
+  "title": "Financial Fraud Analytics",
+  "category": "Power BI · Financial Analytics",
+  "group": "Analytics & BI",
+  "description": "Explore transaction patterns and fraud labels in synthetic financial data. A Power BI report with transaction-type filters, KPI summaries and time-based views.",
+  "image": "assets/images/financial-fraud.png",
+  "imageAlt": "Financial fraud dashboard showing transaction totals, labeled fraud cases and fraud rates by transaction type",
+  "order": 10,
+  "visible": true,
+  "wide": true,
+  "isNew": true,
+  "problem": "Where are fraud-labeled transactions concentrated, and how do transaction types compare in a synthetic financial dataset?",
+  "approach": "Built a Power BI report with measures for transaction count, transaction amount, fraud count, fraud rate and fraud-labeled amount. Added transaction-type filters, comparisons and simulation-time views.",
+  "outcome": "The supplied report snapshot shows about 1.049 million transactions and 1,142 fraud-labeled transactions (0.11%). The visible fraud cases are in CASH_OUT (578) and TRANSFER (564). The report file is available for inspection in Power BI Desktop.",
+  "limitations": "Synthetic data for portfolio analysis. Counts describe the supplied screenshot and its filter state, not a live financial system. Fraud-labeled amount is not money recovered or fraud prevented. Time-axis sorting and rate denominators should be checked before operational interpretation.",
+  "links": [
+    {
+      "label": "Download Power BI · 62 MB",
+      "url": "assets/downloads/Synthetic_Financial_datasets.pbix",
+      "download": true
+    },
+    {
+      "label": "View dashboard image",
+      "url": "assets/images/financial-fraud.png",
+      "download": false
+    }
+  ]
+}

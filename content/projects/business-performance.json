@@ -4,7 +4,7 @@
   "description": "A downloadable Power BI report for exploring performance through interactive filters, KPI summaries, transformed source data, and time-based DAX calculations.",
   "image": "assets/images/macbook.jpg",
   "imageAlt": "Business Performance Power BI Report",
-  "order": 40,
+  "order": 50,
   "visible": true,
   "wide": false,
   "isNew": false,
@@ -14,5 +14,11 @@
       "url": "power-bi-projects-main.zip",
       "download": true
     }
-  ]
+  ],
+  "id": "business-performance",
+  "group": "Analytics & BI",
+  "problem": "How can business performance be reviewed through a reusable reporting view?",
+  "approach": "Created a Power BI report with Power Query transformations, DAX measures, filters and KPI summaries.",
+  "outcome": "A downloadable report for inspecting the analysis and interacting with the available filters.",
+  "limitations": "Portfolio work. No client results or independently measured business savings are claimed."
 }

@@ -1,10 +1,10 @@
 {
   "title": "EmoLens — Facial Emotion Recognition",
   "category": "Deep Learning & Computer Vision",
-  "description": "EfficientNet-B3 + CBAM attention model classifying 7 emotions at 92.6% accuracy across two combined, class-balanced datasets. Found and removed 931 leaked test images via MD5 deduplication, calibrated confidence with Temperature Scaling + TTA, and shipped with live camera, upload, and video-timeline modes.",
+  "description": "A computer-vision prototype with image, camera and video inputs, built around EfficientNet-B3 and attention-based classification.",
   "image": "assets/images/emolens.jpg",
   "imageAlt": "EmoLens Facial Emotion Recognition",
-  "order": 20,
+  "order": 40,
   "visible": true,
   "wide": true,
   "isNew": false,
@@ -14,5 +14,11 @@
       "url": "https://facial-emotion-recognition-m.streamlit.app/",
       "download": false
     }
-  ]
+  ],
+  "id": "emolens",
+  "group": "Applied AI",
+  "problem": "How can a trained image classifier be made accessible through an interactive application?",
+  "approach": "Used EfficientNet-B3 with CBAM attention, dataset deduplication and confidence calibration, then added camera, upload and video interfaces.",
+  "outcome": "An end-to-end demonstration of model integration, prediction presentation and multiple input formats.",
+  "limitations": "Predicted facial-expression labels do not establish a person’s internal emotional state. This is a learning prototype, not a clinical or employment assessment tool."
 }

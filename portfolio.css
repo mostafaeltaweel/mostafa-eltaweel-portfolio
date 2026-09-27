@@ -1,0 +1,48 @@
+/* Preserve the dark / teal identity and keep evidence readable. */
+[hidden] { display:none !important; }
+body, button, .project-card { cursor:auto; }
+a,button { cursor:pointer; }
+.cursor-dot,.cursor-ring { display:none; }
+nav { mix-blend-mode:normal; background:rgba(8,16,13,.88); backdrop-filter:blur(14px); border-bottom:1px solid #ffffff12; }
+.skip-link { position:fixed; top:8px; left:8px; z-index:2000; background:var(--teal); color:#080808; padding:12px 20px; transform:translateY(-150%); }
+.skip-link:focus { transform:none; }
+.availability { display:flex; gap:9px; align-items:center; color:#062e25; font-size:12px; font-weight:600; margin-bottom:16px; letter-spacing:.02em; }
+.availability .status-dot { background:#083f32; box-shadow:0 0 0 5px #083f3215; }
+.hero-specialty { background:#f5fff0d9; }
+.status-dot { height:7px; width:7px; border-radius:50%; background:var(--teal-lt); box-shadow:0 0 0 5px #00b09b20; flex-shrink:0; }
+.hero-role { max-width:580px; }
+.projects-intro { max-width:700px; color:#aaa; margin:0 0 24px; font-size:15px; }
+.project-controls { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
+.filter-chip { border:1px solid #333; padding:10px 17px; border-radius:30px; color:#bbb; font-size:13px; transition:background .2s; }
+.filter-chip.active,.filter-chip:hover { background:var(--teal); color:#080808; border-color:var(--teal); }
+.projects-grid { gap:24px; }
+.project-card,.project-card:not(.wide):not(.rag-featured),.project-card.wide:not(.rag-featured) { height:auto; aspect-ratio:auto; display:flex; flex-direction:column; border-color:#292929; border-radius:16px; }
+.project-image-link { background:#181a1b; display:block; overflow:hidden; }
+.project-card .project-image-link img { width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; padding:16px; filter:none; }
+.project-card:hover img { transform:scale(1.02); filter:none; }
+.project-card .project-overlay { position:static; background:none; padding:26px; flex:1; justify-content:flex-start; }
+.project-name { font-size:23px; min-height:0; margin:6px 0; }
+.project-desc { color:#b2b5b4; display:block; overflow:visible; min-height:0; font-size:14px; flex:1; }
+.project-links { display:flex; flex-wrap:wrap; gap:8px; }
+.project-links .project-btn { border:1px solid #383e3b; color:#d9e6e2; text-transform:none; letter-spacing:0; font-size:12px; }
+.project-links .project-btn.primary { border-color:var(--teal); background:var(--teal); color:#041511; }
+.project-links .project-btn.primary + .project-btn.primary { background:transparent; border-color:#383e3b; color:#d9e6e2; }
+.project-new-pill { top:12px; right:12px; }
+.portfolio-status { color:#e9bf73; margin:0 0 20px; font-size:13px; }
+.empty-projects { color:#aaa; padding:30px 0; }
+.contact-note { color:#aeb4b1; max-width:480px; font-size:14px; margin:0 0 28px; }
+.modal-open { overflow:hidden; }
+#case-dialog,.case-dialog { margin:auto; background:#111615; color:#f0f5f2; border:1px solid #34413b; border-radius:18px; width:min(900px,94vw); max-height:90dvh; padding:42px; overflow:auto; }
+dialog::backdrop { background:#000b; backdrop-filter:blur(5px); }
+.dialog-close { position:sticky; float:right; top:0; width:40px; height:40px; background:#26332e; color:white; border-radius:50%; font-size:26px; z-index:1; }
+.case-eyebrow { color:#68d7bc; font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin:12px 50px 15px 0; }
+#case-title { font-size:clamp(25px,4vw,42px); line-height:1.15; margin-bottom:18px; }
+.case-lead { color:#b5c2bb; margin-bottom:24px; }
+.case-image { width:100%; height:auto; border-radius:8px; margin:20px 0; background:#202522; }
+.case-sections { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:30px 0; }
+.case-sections section { padding:0; }
+.case-sections h3 { font-size:14px; color:#7ad7bf; margin-bottom:8px; }
+.case-sections p { color:#bac4bf; font-size:14px; white-space:pre-line; }
+@media(max-width:700px) { #case-dialog,.case-dialog { padding:22px; } .case-sections { grid-template-columns:1fr; gap:22px; } .project-card .project-overlay { padding:22px; } .availability { font-size:11px; max-width:280px; } .hero-specialty { max-width:100%; } .project-name { font-size:21px; } }
+@media(scripting:none) { .reveal { opacity:1; transform:none; } }
+@media(prefers-reduced-motion:reduce) { .hero-name span { animation:none; transform:none; } }

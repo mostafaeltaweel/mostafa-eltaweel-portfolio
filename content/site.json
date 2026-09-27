@@ -1,7 +1,19 @@
 {
-  "specialty": "AI & Data Analytics",
-  "tagline": "Dashboards · Machine Learning · Automation",
-  "intro": "I turn raw data into dashboards, intelligent applications, and automated workflows that people can actually use.",
-  "about": "I'm a Data Analyst & AI Developer building practical dashboards, analytical models, and intelligent applications with Power BI, SQL, Excel, Python, and machine learning.",
-  "background": "With a Bachelor of Laws from Cairo University, I bring a structured, evidence-based approach to every dataset. I prepare and validate data, build interactive dashboards, and translate business requirements into clear, actionable insights — certified in Microsoft Power BI (PL-300) and Google Data Analytics, with ongoing training in AI & Machine Learning."
+  "specialty": "Data Analyst · Applied AI",
+  "tagline": "Power BI · SQL · Python",
+  "intro": "I turn financial and operational data into clear dashboards, useful insights and practical AI prototypes.",
+  "availability": "Open to Data Analyst & Junior BI opportunities",
+  "about": "I’m Mostafa, a data analyst based in Giza, Egypt. My focus is financial and operational analytics: preparing data, defining useful KPIs and building reports that make patterns easier to understand. I also build applied AI prototypes in Python.",
+  "background": "I completed the Applied AI & Data Analysis diploma at Digilians and am awaiting the certificate. My background combines ERP technical support, a Bachelor of Laws from Cairo University, and Microsoft Power BI and Google Data Analytics credentials.",
+  "email": "mostafa.eltaweel000@gmail.com",
+  "phone": "+201112611898",
+  "location": "Giza, Egypt · Open to remote and on-site roles",
+  "linkedin": "https://www.linkedin.com/in/mostafa-eltaweel/",
+  "github": "https://github.com/mostafaeltaweel",
+  "resume": "assets/Resume.pdf",
+  "portrait": "assets/images/portrait.png",
+  "diploma": "Applied AI & Data Analysis Diploma",
+  "diplomaStatus": "Completed · Certificate pending",
+  "diplomaDescription": "Completed professional training in applied AI and data analysis, with practical work across Power BI, SQL, Python, statistics and machine learning. Awaiting the issued certificate.",
+  "trainingSummary": "Applied AI & Data Analysis diploma completed at Digilians. Certificate pending; Microsoft Power BI and Google Data Analytics credentials are listed below."
 }

@@ -1,5 +1,8 @@
 # تعديل البورتفوليو من GitHub
 
+> هذا الدليل يخص النسخة الثابتة قبل ربط Supabase. لتشغيل الإدارة الجديدة، اتبع [دليل الإعداد](SETUP-AR.md).
+> بعد الربط، عدّل المشاريع من `/admin/`؛ تعديل ملفات GitHub وحده لا يغيّر بيانات Supabase.
+
 كل مشروع له ملف مستقل داخل `content/projects`. الموقع يتحدث بعد حفظ التغييرات على فرع `main` ونجاح النشر.
 
 ## تعديل مشروع
@@ -23,7 +26,9 @@
 
 ```json
 {
+  "id": "sales-dashboard",
   "title": "Sales Dashboard",
+  "group": "Analytics & BI",
   "category": "Power BI",
   "description": "وصف المشروع والنتيجة التي حققها.",
   "image": "assets/images/powerbi-survey.jpg",
@@ -32,6 +37,10 @@
   "visible": true,
   "wide": true,
   "isNew": true,
+  "problem": "ما السؤال الذي تحاول الإجابة عنه؟",
+  "approach": "كيف أعددت البيانات وبنيت التحليل؟",
+  "outcome": "ما الذي يعرضه العمل وما النتيجة المثبتة؟",
+  "limitations": "اذكر مصدر البيانات وحدود الاستخدام.",
   "links": [
     {
       "label": "GitHub",
@@ -47,6 +56,8 @@
 | الحقل | الاستخدام |
 | --- | --- |
 | `title` | اسم المشروع |
+| `id` | معرّف يطابق اسم الملف بدون `.json` |
+| `group` | `Analytics & BI` أو `Applied AI` أو `Tools & Automation` |
 | `category` | المجال أو الأدوات |
 | `description` | وصف المشروع |
 | `image` | مسار الصورة داخل المستودع أو رابط HTTPS |
@@ -119,4 +130,4 @@
 node scripts/build.mjs
 ```
 
-ثم افتح `index.html` في المتصفح. مجلد `_site` يحتوي على ملفات النشر.
+ثم شغّل `node scripts/serve.mjs` وافتح `http://127.0.0.1:4173/`. مجلد `_site` يحتوي على ملفات النشر.

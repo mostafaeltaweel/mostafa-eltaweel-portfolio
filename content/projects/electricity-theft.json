@@ -1,10 +1,10 @@
 {
-  "title": "Electricity Theft Detection — Dual-Branch CNN-LSTM",
+  "title": "Electricity Theft Detection",
   "category": "Machine Learning & Explainable AI",
-  "description": "AI-based smart-meter theft detector on the SGCC benchmark (18,193 consumers). Combines a CNN-LSTM temporal branch with 59 engineered statistical features, 12 synthetic theft-generation techniques, and threshold optimisation — reaching 91.2% accuracy and 96.9% AUC-ROC, deployed as a Streamlit risk-scoring app.",
+  "description": "A Streamlit prototype for exploring smart-meter risk with a dual-branch CNN-LSTM model and engineered consumption features.",
   "image": "assets/images/electricity-theft.jpg",
   "imageAlt": "Electricity Theft Detection Dashboard",
-  "order": 10,
+  "order": 30,
   "visible": true,
   "wide": true,
   "isNew": false,
@@ -14,5 +14,11 @@
       "url": "https://theft-electric-detection-c.streamlit.app/",
       "download": false
     }
-  ]
+  ],
+  "id": "electricity-theft",
+  "group": "Applied AI",
+  "problem": "How can electricity-consumption patterns help prioritize unusual meters for review?",
+  "approach": "Combined temporal modeling with engineered statistical features and packaged the model in a Streamlit risk-scoring interface.",
+  "outcome": "An interactive demonstration of the workflow from consumption data to a model-assisted risk score.",
+  "limitations": "Portfolio prototype using benchmark and simulated theft scenarios. A risk score is not proof of theft. Model performance must be reviewed against the evaluation protocol before operational use."
 }

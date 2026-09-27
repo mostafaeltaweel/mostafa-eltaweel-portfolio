@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mostafa Eltaweel — AI &amp; Data Analytics</title>
+  <title>Mostafa Eltaweel — Data Analyst &amp; Applied AI</title>
   <meta name="description" content="AI and Data Analytics portfolio by Mostafa Eltaweel — Power BI dashboards, machine learning applications, Python analytics, SQL, and n8n automation.">
 
   <!-- Favicon -->
@@ -11,20 +11,23 @@
 
   <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mostafa Eltaweel — AI &amp; Data Analytics">
+  <meta property="og:title" content="Mostafa Eltaweel — Data Analyst &amp; Applied AI">
   <meta property="og:description" content="Dashboards, machine learning applications, data products, and workflow automation built around real problems.">
-  <meta property="og:image" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/assets/images/powerbi-survey.jpg">
-  <meta property="og:url" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/">
+  <meta property="og:image" content="{{shareImage}}">
+  <meta property="og:url" content="{{siteUrl}}">
+  <link rel="canonical" href="{{siteUrl}}">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mostafa Eltaweel — AI &amp; Data Analytics">
+  <meta name="twitter:title" content="Mostafa Eltaweel — Data Analyst &amp; Applied AI">
   <meta name="twitter:description" content="Power BI, SQL, Python, machine learning, and automation projects.">
-  <meta name="twitter:image" content="https://mostafaeltaweel.github.io/mostafa-eltaweel-portfolio/assets/images/powerbi-survey.jpg">
+  <meta name="twitter:image" content="{{shareImage}}">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
+  <a class="skip-link" href="#intro">Skip to content</a>
 
   <!-- Custom Cursor -->
   <div class="cursor-dot" id="cursor-dot"></div>
@@ -43,7 +46,7 @@
       <li><a href="#certifications">Certs</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta resume-cta">Resume</a>
+      <a data-url="resume" href="{{resume}}" target="_blank" rel="noopener noreferrer" class="nav-cta resume-cta">Resume</a>
       <a href="#contact" class="nav-cta">Let's Connect</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-controls="mobile-nav" aria-expanded="false">
@@ -60,29 +63,30 @@
     <a href="#experience" class="mobile-link">Experience</a>
     <a href="#beyond" class="mobile-link">More</a>
     <a href="#certifications" class="mobile-link">Certs</a>
-    <a href="assets/Resume.pdf" class="mobile-link" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a data-url="resume" href="{{resume}}" class="mobile-link" target="_blank" rel="noopener noreferrer">Resume</a>
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
   <!-- ===== HERO ===== -->
   <section id="hero">
     <div class="hero-photo">
-      <img src="assets/images/portrait.png" alt="Mostafa Eltaweel">
+      <img data-image="portrait" src="{{portrait}}" alt="Mostafa Eltaweel">
     </div>
     <div class="hero-content">
+      <div class="availability"><span class="status-dot"></span><span data-field="availability">{{availability}}</span></div>
       <div class="hero-specialty">
-        <span>{{specialty}}</span>
-        <small>{{tagline}}</small>
+        <span data-field="specialty">{{specialty}}</span>
+        <small data-field="tagline">{{tagline}}</small>
       </div>
       <h1 class="hero-name">
         <span>Mostafa</span>
         <span>Eltaweel</span>
       </h1>
       <div class="hero-meta">
-        <div class="hero-role">{{intro}}</div>
+        <div data-field="intro" class="hero-role">{{intro}}</div>
         <a href="#projects" class="hero-scroll-hint">
           <span class="scroll-line"></span>
-          View selected work
+          Explore my work
         </a>
       </div>
     </div>
@@ -121,16 +125,16 @@
     <div class="section-label">About me</div>
     <div class="intro-grid">
       <div class="intro-headline reveal">
-        Here's what I<br>
-        <em>actually do</em><br>
-        all day
+        Clear thinking.<br>
+        <em>Useful analysis.</em><br>
+        Practical tools.
       </div>
       <div class="intro-body">
-        <p class="reveal reveal-delay-1">{{about}}</p>
-        <p class="reveal reveal-delay-2">{{background}}</p>
+        <p data-field="about" class="reveal reveal-delay-1">{{about}}</p>
+        <p data-field="background" class="reveal reveal-delay-2">{{background}}</p>
         <div class="intro-stats">
           <div class="reveal reveal-delay-1">
-            <div class="stat-val" data-target="{{projectCount}}">0</div>
+            <div class="stat-val" id="project-count" data-target="{{projectCount}}">{{projectCount}}</div>
             <div class="stat-lbl">AI &amp; Data Projects</div>
           </div>
           <div class="reveal reveal-delay-2">
@@ -138,8 +142,8 @@
             <div class="stat-lbl">Certifications</div>
           </div>
           <div class="reveal reveal-delay-3">
-            <div class="stat-val" data-target="18">0</div>
-            <div class="stat-lbl">K+ Consumers Analysed</div>
+            <div class="stat-val">BI + AI</div>
+            <div class="stat-lbl">Analysis through to application</div>
           </div>
         </div>
       </div>
@@ -158,7 +162,7 @@
         </h2>
       </div>
       <p class="services-sub reveal reveal-delay-1">
-        Three areas I can contribute in today, backed by the work shown below—not a generic list of tools.
+        Financial and operational reporting is my core focus. Applied AI and automation help me take the analysis further.
       </p>
     </div>
 
@@ -173,7 +177,7 @@
           <span class="capability-toggle" aria-hidden="true">−</span>
         </button>
         <div class="capability-panel" id="capability-analytics">
-          <p>I turn operational and ERP data into models, KPIs, and dashboards that answer specific business questions—not decorative charts.</p>
+          <p>I turn operational and ERP data into models, KPIs, and dashboards that answer specific business questions—with clearly defined metrics.</p>
           <div class="capability-proof"><span>What I deliver</span><b>Clean data models</b><b>Decision-ready dashboards</b><b>Repeatable reports</b></div>
         </div>
       </article>
@@ -215,10 +219,13 @@
     <div class="projects-header">
       <div>
         <div class="section-label">Selected work</div>
-        <h2 class="projects-headline reveal">Featured Projects</h2>
+        <h2 class="projects-headline reveal">Selected Projects</h2>
       </div>
     </div>
 
+    <p class="projects-intro">Independent portfolio work. Explore the question, approach, deliverable and limitations behind each project.</p>
+    <div class="project-controls" aria-label="Filter projects"><button class="filter-chip active" data-project-filter="all" aria-pressed="true">All work</button><button class="filter-chip" data-project-filter="Analytics &amp; BI" aria-pressed="false">Analytics &amp; BI</button><button class="filter-chip" data-project-filter="Applied AI" aria-pressed="false">Applied AI</button><button class="filter-chip" data-project-filter="Tools &amp; Automation" aria-pressed="false">Tools &amp; Automation</button></div>
+    <p id="portfolio-status" class="portfolio-status" role="status" hidden></p>
     <div class="projects-grid">
 {{projects}}
     </div>
@@ -286,7 +293,7 @@
     <div class="testimonials-label">My background</div>
 
     <div class="experience-heading reveal">
-      <h2>Work, education<br><em>&amp; ongoing training</em></h2>
+      <h2>Work, education<br><em>&amp; professional training</em></h2>
       <p>The experience behind my approach to data: operational support, structured analysis, and continuous technical learning.</p>
     </div>
 
@@ -317,12 +324,12 @@
 
       <div class="testimonial-card reveal reveal-delay-2">
         <div class="testimonial-stars"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M11 20V4M18 20v-7"/></svg></div>
-        <p class="testimonial-quote">Ongoing professional training in Power BI, SQL, Python, and Excel—applying statistics, data cleaning, machine learning, and neural networks to real-world dashboards and datasets.</p>
+        <p class="testimonial-quote"><span data-field="diplomaDescription">{{diplomaDescription}}</span></p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">DG</div>
           <div>
             <div class="testimonial-name">Digilians</div>
-            <div class="testimonial-role">Military Diploma — Data Analytics &amp; AI · Dec 2025 – Present</div>
+            <div class="testimonial-role"><span data-field="diploma">{{diploma}}</span> · <span data-field="diplomaStatus">{{diplomaStatus}}</span></div>
           </div>
         </div>
       </div>
@@ -333,7 +340,7 @@
   <section id="beyond">
     <div class="beyond-grid">
       <div class="beyond-image">
-        <img src="assets/images/portrait.png" alt="Beyond the portfolio" loading="lazy">
+        <img data-image="portrait" src="{{portrait}}" alt="Beyond the portfolio" loading="lazy">
       </div>
       <div class="beyond-content">
         <div class="section-label">Beyond the portfolio</div>
@@ -346,7 +353,7 @@
             <div class="beyond-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5 12 4l10 4.5-10 4.5-10-4.5z"/><path d="M6 10.7v4.6c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.6"/><path d="M22 8.5v6"/></svg></div>
             <div class="beyond-item-text">
               <h4>Continuous Learner</h4>
-              <p>Currently completing a Military Diploma in Data Analytics &amp; AI at Digilians, on top of Microsoft and Google certifications.</p>
+              <p><span data-field="trainingSummary">{{trainingSummary}}</span></p>
             </div>
           </li>
           <li class="beyond-item reveal reveal-delay-1">
@@ -386,7 +393,7 @@
         </h2>
       </div>
       <p class="certs-sub reveal reveal-delay-1">
-        Certified in Microsoft Power BI Data Analytics (PL-300) and Google Data Analytics — with ongoing professional training in Data Analytics &amp; Artificial Intelligence.
+        <span data-field="trainingSummary">{{trainingSummary}}</span>
       </p>
     </div>
 
@@ -395,7 +402,7 @@
       <button class="cert-filter active" data-filter="all">All</button>
       <button class="cert-filter" data-filter="microsoft">Microsoft</button>
       <button class="cert-filter" data-filter="google">Google</button>
-      <button class="cert-filter" data-filter="digilians">In Progress</button>
+      <button class="cert-filter" data-filter="digilians">Diploma</button>
     </div>
 
     <div class="certs-grid">
@@ -446,7 +453,7 @@
         <div class="cert-meta">
           <span class="cert-date">Issued Apr 2026</span>
         </div>
-        <p class="cert-desc">Nine-course program covering the full analytics workflow — Ask → Prepare → Process → Analyze → Share → Act — including spreadsheets, SQL, Tableau, Python for data analysis, and a capstone case study.</p>
+        <p class="cert-desc">Professional certificate covering the analytics workflow: asking useful questions, preparing and analyzing data, and communicating findings through visualizations and a capstone project.</p>
         <div class="cert-skills">
           <span class="cert-skill-tag">SQL</span>
           <span class="cert-skill-tag">Python</span>
@@ -459,23 +466,23 @@
         </a>
       </div>
 
-      <!-- ========== DIGILIANS: Military Diploma — In Progress ========== -->
-      <div class="cert-card in-progress reveal reveal-delay-2" data-issuer="digilians">
+      <!-- ========== DIGILIANS: Completed diploma, certificate pending ========== -->
+      <div class="cert-card reveal reveal-delay-2" data-issuer="digilians">
         <div class="cert-badge">
           <div class="cert-issuer-logo digilians">DG</div>
-          <span class="cert-progress-pill"><span class="dot"></span>In Progress</span>
+          <span class="cert-progress-pill"><span class="dot"></span><span data-field="diplomaStatus">{{diplomaStatus}}</span></span>
         </div>
         <div class="cert-image-slot no-img">
           <div class="cert-img-placeholder" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
           </div>
         </div>
-        <h3 class="cert-name">Military Diploma — Data Analytics &amp; AI</h3>
+        <h3 class="cert-name"><span data-field="diploma">{{diploma}}</span></h3>
         <div class="cert-issuer">Digilians</div>
         <div class="cert-meta">
-          <span class="cert-date">Dec 2025 – Present</span>
+          <span class="cert-date"><span data-field="diplomaStatus">{{diplomaStatus}}</span></span>
         </div>
-        <p class="cert-desc">Ongoing professional training covering Power BI, SQL, Python, statistics, machine learning and neural networks, applied through hands-on dashboards, data models, and real datasets.</p>
+        <p class="cert-desc"><span data-field="diplomaDescription">{{diplomaDescription}}</span></p>
         <div class="cert-skills">
           <span class="cert-skill-tag">Statistics</span>
           <span class="cert-skill-tag">Machine Learning</span>
@@ -496,35 +503,36 @@
           <span>connect</span>
         </h2>
         <div class="contact-details">
-          <a href="mailto:mostafa.eltaweel000@gmail.com" class="contact-link">
+          <a data-contact="email" href="mailto:{{email}}" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></span>
-            mostafa.eltaweel000@gmail.com
+            <span data-field="email">{{email}}</span>
           </a>
-          <a href="tel:+201112611898" class="contact-link">
+          <a data-contact="phone" href="tel:{{phone}}" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3.5h4l1.8 4.6-2.4 1.7a13.5 13.5 0 0 0 6.3 6.3l1.7-2.4 4.6 1.8v4a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 3 5.1a1.5 1.5 0 0 1 1.5-1.6z"/></svg></span>
-            +20 111 261 1898
+            <span data-field="phone">{{phone}}</span>
           </a>
-          <a href="https://www.linkedin.com/in/mostafa-eltaweel/" target="_blank" class="contact-link">
+          <a data-url="linkedin" href="{{linkedin}}" target="_blank" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="8.5" width="3.5" height="12" rx="0.5"/><circle cx="4.75" cy="4.5" r="2"/><path d="M10.5 8.5H14v1.9c.7-1.3 2.2-2.2 4-2.2 3.3 0 4.5 2 4.5 5.4V20.5h-3.5v-6.3c0-1.6-.6-2.7-2-2.7-1.1 0-1.8.8-2.1 1.5-.1.3-.1.6-.1 1v6.5h-3.5c0-.1.1-11 0-12z"/></svg></span>
-            linkedin.com/in/mostafa-eltaweel
+            LinkedIn profile
           </a>
-          <a href="https://github.com/mostafaeltaweel" target="_blank" class="contact-link">
+          <a data-url="github" href="{{github}}" target="_blank" class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.5 0-5.5-4.5-10-10-10z"/></svg></span>
-            github.com/mostafaeltaweel
+            GitHub profile
           </a>
           <div class="contact-link">
             <span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-            Giza, Egypt
+            <span data-field="location">{{location}}</span>
           </div>
         </div>
-        <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="submit-btn resume-download-btn">
+        <a data-url="resume" href="{{resume}}" target="_blank" rel="noopener noreferrer" class="submit-btn resume-download-btn">
           Download Resume
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         </a>
       </div>
       <div class="contact-right">
-        <h3 class="contact-form-title">Send a message</h3>
-        <form id="contact-form" action="mailto:mostafa.eltaweel000@gmail.com" method="POST" data-email-fallback="true">
+        <h3 class="contact-form-title">Let’s discuss your next project</h3>
+        <p class="contact-note">Hiring for a data role or need a dashboard? Share the problem, available data and timeline. This form opens your email app.</p>
+        <form id="contact-form" action="mailto:{{email}}" method="POST" data-email-fallback="true">
           <div class="form-field">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Name" required>
@@ -542,7 +550,7 @@
             <textarea id="message" name="message" placeholder="Tell me about your project…" required></textarea>
           </div>
           <button type="submit" class="submit-btn" id="contact-submit-btn">
-            <span class="btn-label">Send Message</span>
+            <span class="btn-label">Open email draft</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -557,14 +565,17 @@
   <footer>
     <p class="footer-copy">© 2026 Mostafa Eltaweel — All rights reserved</p>
     <div class="footer-socials">
-      <a href="https://www.linkedin.com/in/mostafa-eltaweel/" target="_blank" class="footer-social-link">LinkedIn</a>
-      <a href="https://github.com/mostafaeltaweel" target="_blank" class="footer-social-link">GitHub</a>
-      <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-social-link">Resume</a>
-      <a href="mailto:mostafa.eltaweel000@gmail.com" class="footer-social-link">Email</a>
-      <a href="tel:+201112611898" class="footer-social-link">Call</a>
+      <a data-url="linkedin" href="{{linkedin}}" target="_blank" class="footer-social-link">LinkedIn</a>
+      <a data-url="github" href="{{github}}" target="_blank" class="footer-social-link">GitHub</a>
+      <a data-url="resume" href="{{resume}}" target="_blank" rel="noopener noreferrer" class="footer-social-link">Resume</a>
+      <a data-contact="email" href="mailto:{{email}}" class="footer-social-link">Email</a>
+      <a data-contact="phone" href="tel:{{phone}}" class="footer-social-link">Call</a>
     </div>
   </footer>
 
+  <dialog id="case-dialog" aria-labelledby="case-title"><button class="dialog-close" type="button" aria-label="Close case study">×</button><div id="case-content"></div></dialog>
+  <script id="portfolio-seed" type="application/json">{{seed}}</script>
   <script src="script.js"></script>
+  <script type="module" src="app/public.mjs"></script>
 </body>
 </html>

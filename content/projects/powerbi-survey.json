@@ -1,10 +1,10 @@
 {
   "title": "Data Professional Survey Dashboard",
   "category": "Power BI & Business Analytics",
-  "description": "Interactive Power BI dashboard analysing career trends, compensation, and skills across 630 data professionals (avg. age 29.87) — geographic distribution, salary by job title, tool preferences by role, entry-barrier sentiment, and satisfaction gauges for work/life balance (5.74/10) and salary (4.27/10).",
+  "description": "A Power BI dashboard exploring compensation, tools and career satisfaction across a survey of 630 data professionals.",
   "image": "assets/images/powerbi-survey.jpg",
   "imageAlt": "Data Professional Survey Dashboard",
-  "order": 30,
+  "order": 20,
   "visible": true,
   "wide": true,
   "isNew": false,
@@ -14,5 +14,11 @@
       "url": "assets/images/powerbi-survey-demo.mp4",
       "download": false
     }
-  ]
+  ],
+  "id": "powerbi-survey",
+  "group": "Analytics & BI",
+  "problem": "What patterns in roles, compensation and career satisfaction appear in a data-professional survey?",
+  "approach": "Presented geographic distribution, salary by role, tool preferences and satisfaction measures in an interactive dashboard.",
+  "outcome": "A visual summary that lets viewers compare the survey responses. A recorded walkthrough is available.",
+  "limitations": "A self-reported survey reflects its respondents and sampling limits. It is not a representative salary benchmark for every market."
 }

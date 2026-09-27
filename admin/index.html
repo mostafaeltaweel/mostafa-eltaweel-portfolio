@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>إدارة البورتفوليو | Mostafa Eltaweel</title><link rel="stylesheet" href="admin.css"><link rel="stylesheet" href="../portfolio.css"></head>
+<body>
+<header class="admin-header"><a class="brand" href="../">ME<span>إدارة البورتفوليو</span></a><div class="header-actions"><a href="../" target="_blank" rel="noopener">فتح الموقع ↗</a><button id="logout" hidden>تسجيل الخروج</button></div></header>
+<main>
+  <p id="notice" class="notice" role="status" aria-live="polite">جارٍ تحميل الإعدادات…</p>
+  <section id="setup" class="panel login" hidden><span class="eyebrow">خطوة واحدة قبل الإدارة</span><h1>اربط موقعك بـ Supabase</h1><p>واجهة الزوار جاهزة. لتفعيل الحفظ والنشر، اتبع ملف <bdi>SETUP-AR.md</bdi> داخل نسخة المشروع، ثم أضف متغيرات البيئة في Vercel وأعد النشر.</p><p>تحتاج إلى رابط المشروع والمفتاح العام فقط. لا تستخدم مفتاح <bdi>service_role</bdi> أو مفتاحًا سريًا.</p><a class="button primary" href="?demo=1">تجربة لوحة الإدارة بدون نشر</a></section>
+  <section id="login-panel" class="panel login" hidden><span class="eyebrow">مساحتك الخاصة</span><h1>أعمالك، تحت سيطرتك.</h1><p>ادخل بحساب الأدمن لإضافة المشاريع وتحديث موقعك.</p><form id="login-form"><label>البريد الإلكتروني<input name="email" type="email" autocomplete="username" dir="ltr" required></label><label>كلمة المرور<input name="password" type="password" autocomplete="current-password" dir="ltr" required></label><button class="primary" type="submit">تسجيل الدخول</button></form><small>إذا نسيت كلمة المرور، أعد تعيينها من لوحة Supabase الخاصة بك.</small></section>
+  <section id="workspace" hidden>
+    <div class="workspace-heading"><div><span class="eyebrow">موقعك، خطوة بخطوة</span><h1>خلّي شغلك يتكلم عنك.</h1><p>أضف الدليل على مهاراتك. راجع المحتوى، ثم انشره للجميع.</p></div><button id="export">تنزيل نسخة من المحتوى ↓</button></div>
+    <div class="dashboard-stats"><div><b id="published-count">0</b><span>مشروع منشور</span></div><div><b id="draft-count">0</b><span>مشروع مخفي</span></div><div><b>BI + AI</b><span>تخصصك المهني</span></div></div>
+    <div class="tabs" role="group" aria-label="أقسام الإدارة"><button id="projects-tab" class="active" aria-pressed="true">المشاريع</button><button id="profile-tab" aria-pressed="false">البيانات الشخصية</button><button id="refresh">تحديث البيانات ↻</button></div>
+    <section id="projects-panel" class="editor-layout">
+      <aside class="panel projects-sidebar"><div class="list-heading"><h2>مشاريعك</h2><button id="new-project" class="primary">+ إضافة</button></div><label>ابحث عن مشروع<input id="search" type="search" placeholder="اسم المشروع"></label><div id="project-list"></div></aside>
+      <section class="panel editor"><div class="editor-title"><div><span class="eyebrow" id="editor-state">مشروع جديد</span><h2 id="editor-title">إضافة مشروع</h2></div><span id="save-state"></span></div>
+        <form id="project-form">
+          <div class="fields-two"><label>اسم المشروع<input name="title" maxlength="180" required placeholder="Financial Fraud Analytics" dir="auto"></label><label>المعرّف الثابت<input name="id" pattern="[a-z0-9]+(-[a-z0-9]+)*" maxlength="80" required dir="ltr" placeholder="financial-fraud"><small>حروف إنجليزية صغيرة وشرطة. لا يتغير بعد الحفظ.</small></label></div>
+          <div class="fields-two"><label>القسم<select name="group"><option>Analytics &amp; BI</option><option>Applied AI</option><option>Tools &amp; Automation</option></select></label><label>الأدوات / التصنيف<input name="category" maxlength="180" required dir="auto" placeholder="Power BI · SQL"></label></div>
+          <label>وصف مختصر للبطاقة<textarea name="description" maxlength="1500" rows="3" required dir="auto"></textarea></label>
+          <fieldset><legend>صورة المشروع</legend><label>رابط الصورة أو مسارها<input name="image" dir="ltr" required placeholder="assets/images/project.png"></label><label>وصف الصورة لقارئ الشاشة<input name="imageAlt" maxlength="180" required dir="auto"></label><label class="upload-label">رفع صورة جديدة · PNG / JPG / WebP · حتى 8 MB<input id="image-upload" type="file" accept="image/png,image/jpeg,image/webp"></label></fieldset>
+          <fieldset><legend>دراسة الحالة</legend><p class="field-help">اكتب ما نفّذته فعلًا. فرّق بين نتائج البيانات التجريبية والنتائج التجارية.</p><label>السؤال أو المشكلة<textarea name="problem" maxlength="4000" rows="3" required dir="auto"></textarea></label><label>طريقة العمل<textarea name="approach" maxlength="4000" rows="3" required dir="auto"></textarea></label><label>النتيجة / ما يعرضه المشروع<textarea name="outcome" maxlength="4000" rows="3" required dir="auto"></textarea></label><label>حدود المشروع ومصدر البيانات<textarea name="limitations" maxlength="4000" rows="3" required dir="auto"></textarea></label></fieldset>
+          <fieldset><legend>روابط الزوار</legend><div id="links-list"></div><button id="add-link" type="button">+ رابط جديد</button><label class="upload-label">رفع مرفق عام · PDF / PBIX / XLSX / ZIP / MP4 · حتى 45 MB<input id="file-upload" type="file" accept=".pdf,.pbix,.xlsx,.zip,.mp4"></label><small>الملفات المرفوعة متاحة لمن يملك رابطها. لا ترفع بيانات خاصة. الملفات الأكبر تُضاف عبر رابط أو داخل assets.</small></fieldset>
+          <div class="fields-two"><label>الترتيب<input name="order" type="number" min="0" max="10000" step="1" value="80" required><small>الرقم الأصغر يظهر أولًا.</small></label><div class="checkboxes"><label><input name="visible" type="checkbox"> منشور للجميع</label><label><input name="isNew" type="checkbox"> علامة «عمل جديد»</label></div></div>
+          <div class="editor-actions"><button id="save-project" type="submit" class="primary">حفظ المشروع</button><button id="preview" type="button">معاينة</button><button id="delete-project" type="button" class="danger" hidden>حذف المشروع</button></div>
+          <p class="field-help">الحفظ مع تفعيل «منشور للجميع» يحدّث المحتوى المباشر. أعد فتح الموقع لرؤية النتيجة.</p>
+        </form>
+      </section>
+    </section>
+    <section id="profile-panel" class="panel" hidden><h2>بياناتك المهنية</h2><p class="field-help">تحديث النبذة والتواصل والدبلومة والصورة والسيرة الذاتية. باقي أقسام التصميم في قالب الموقع.</p><form id="profile-form"><div id="profile-fields" class="fields-two"></div><label class="upload-label">رفع سيرة ذاتية PDF جديدة<input id="resume-upload" type="file" accept="application/pdf"></label><button type="submit" class="primary">حفظ ونشر البيانات</button></form></section>
+  </section>
+</main>
+<dialog id="preview-dialog" class="case-dialog" dir="ltr" aria-labelledby="case-title"><button class="dialog-close" aria-label="إغلاق المعاينة">×</button><div id="preview-content"></div></dialog>
+<script type="module" src="admin.mjs"></script>
+</body></html>
