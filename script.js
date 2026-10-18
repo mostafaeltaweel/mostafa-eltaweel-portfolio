@@ -1,273 +1,264 @@
-/* ===================== CUSTOM CURSOR ===================== */
-const dot  = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (finePointer && !reduceMotion) {
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  (function animate() {
-    rx += (mx - rx) * 0.18;
-    ry += (my - ry) * 0.18;
-    if (dot)  { dot.style.left  = mx + 'px'; dot.style.top  = my + 'px'; }
-    if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
-    requestAnimationFrame(animate);
-  })();
-}
+/**
+ * Mostafa Mohamed — Minimalist Personal Portfolio Interactive Script
+ * High performance Vanilla JS: Category Filter, Video Modal, STAR Case Study Modal, Mobile Nav
+ */
 
-/* ===================== MOBILE HAMBURGER ===================== */
-const hamburger  = document.getElementById('hamburger');
-const mobileNav  = document.getElementById('mobile-nav');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+document.addEventListener('DOMContentLoaded', () => {
 
-function toggleMobileMenu(forceClose) {
-  const isOpen = mobileNav.classList.contains('open');
-  if (forceClose || isOpen) {
-    mobileNav.classList.remove('open');
-    document.body.style.overflow = '';
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.children[0].style.transform = '';
-    hamburger.children[1].style.opacity   = '';
-    hamburger.children[2].style.transform = '';
-  } else {
-    mobileNav.classList.add('open');
+  // ==========================================
+  // CASE STUDY DATABASE (STAR Framework)
+  // ==========================================
+  const caseStudies = {
+    'hotel-booking': {
+      title: 'Hotel Booking Performance & Cancellation Diagnostics',
+      category: 'Hospitality Analytics & Revenue Diagnostics',
+      problem: 'High cancellation volatility (averaging 37% across 119k+ reservations) distorted operational forecasting, wasted staffing allocations, and tied up high-demand rooms without captured revenue.',
+      approach: 'Cleaned and structured transactional hospitality logs using SQL Server CTEs and aggregations. Built a multi-page Power BI dashboard featuring dynamic DAX time-intelligence metrics isolating Lead Time risk cohorts (>90 days displayed double cancellation propensity), Deposit Type anomalies (non-refundable deposits exhibiting counter-intuitive cancellation patterns in specific channels), and OTA distribution reliance.',
+      outcome: 'Formulated targeted operational policies: dynamic deposit requirements tied to lead time, automated re-confirmation milestones for OTAs, and room-release timers that help hotels recover lost occupancy value and protect peak seasons.',
+      tech: ['Power BI Desktop', 'DAX Measures', 'SQL Server', 'Data Modeling', 'Root Cause Diagnostics'],
+      links: [
+        { label: 'Watch Video Walkthrough', action: 'video', videoSrc: 'assets/videos/hotel-booking-diagnostics.mp4', primary: true },
+        { label: 'Download Power BI (.pbix)', url: 'assets/downloads/Booking%20Analysis.pbix', download: true },
+        { label: 'Read In-Depth Case Study (Google Doc)', url: 'https://docs.google.com/document/d/e/2PACX-1vSSBGNaWC8HfhDhWMlAlTvMmfnz6Sd5cPniONcgMm1dgZeW1xXloudtuDA8VQqFBJ5A3g8h2YVuxv7L/pub', external: true }
+      ]
+    },
+    'financial-fraud': {
+      title: 'Financial Fraud Analytics at Scale',
+      category: 'Financial Analytics & Anomaly Detection',
+      problem: 'In a high-throughput financial system comprising 1.05M transactions, fraudulent transactions constitute a needle-in-a-haystack occurrence (1,142 cases or 0.11%), making manual auditing economically impossible and operationally slow.',
+      approach: 'Built an enterprise Power BI model equipped with multi-tiered DAX measures evaluating fraud rates, high-risk amount volumes, and temporal fraud velocity. Analyzed transaction behaviors across all payment modes to determine vulnerability vectors.',
+      outcome: 'Proved empirically that 100% of confirmed fraud instances were concentrated exclusively in TRANSFER and CASH_OUT mechanisms, allowing risk compliance teams to configure automated rule filters that eliminate manual review on low-risk transactions and focus 100% of audit resources on high-exposure vectors.',
+      tech: ['Power BI', 'DAX Time-Intelligence', 'Financial Risk Modeling', 'Data Storytelling'],
+      links: [
+        { label: 'Download Power BI Desktop (.pbix)', url: 'assets/downloads/Synthetic_Financial_datasets.pbix', download: true, primary: true },
+        { label: 'View Dashboard Screenshot', url: 'assets/images/financial-fraud.png', external: true }
+      ]
+    },
+    'ai-lead-system': {
+      title: 'Autonomous AI Lead Qualification & CRM Agent',
+      category: 'AI Agents & Workflow Automation',
+      problem: 'Inbound sales inquiries arriving via Telegram, forms, and Gmail suffered from hours of qualification latency. Warm prospects lost purchase momentum while sales reps wasted valuable hours manually copying details into spreadsheets.',
+      approach: 'Engineered a 4-pipeline autonomous n8n workflow system powered by Groq LLM API. The pipeline normalizes unstructured queries, parses customer intent, budget, and urgency into schema-validated JSON, syncs the records automatically into a Google Sheets Mini CRM, and immediately pushes a high-priority Telegram alert to the business owner whenever a "Hot Lead" is detected.',
+      outcome: 'Slashed inbound lead qualification response time from hours to under 30 seconds, eliminating manual data entry errors and ensuring high-value clients are engaged while their buying intent is at its peak.',
+      tech: ['n8n Community Edition', 'Groq LLM API', 'System Prompts', 'Webhooks & REST APIs', 'Google Sheets CRM'],
+      links: [
+        { label: 'Download Complete Workflow Pack (.zip)', url: 'assets/downloads/ai-lead-automation-workflows.zip', download: true, primary: true }
+      ]
+    },
+    'electricity-theft': {
+      title: 'Electricity Theft Detection Application',
+      category: 'Applied Deep Learning & Computer Vision',
+      problem: 'Electric utilities suffer multi-million dollar annual revenue losses from illegal meter bypassing and non-technical grid theft, where static heuristic rules fail to detect gradual or intermittent tampering.',
+      approach: 'Architected a hybrid dual-branch deep learning network (CNN-LSTM). The 2D-CNN branch extracts spatial daily consumption signatures, while the LSTM branch models long-term sequential temporal anomalies. Engineered consumption ratio features and packaged the inference pipeline into a clean Streamlit application.',
+      outcome: 'Provides field inspection units with probabilistic risk scores, transitioning utility inspection from blind random sweeps into targeted, high-probability audits that maximize revenue recovery.',
+      tech: ['PyTorch / TensorFlow', 'CNN-LSTM Hybrid', 'Streamlit Cloud', 'Feature Engineering'],
+      links: [
+        { label: 'Launch Live Streamlit App', url: 'https://theft-electric-detection-c.streamlit.app/', external: true, primary: true }
+      ]
+    },
+    'rxhand-ai': {
+      title: 'RxHand-AI: Handwritten Prescription Recognition & Structuring',
+      category: 'Healthcare AI & Vision Transformers',
+      problem: 'Illegible physician handwriting on physical prescription slips leads to fatal pharmacy dispensing errors, clinical communication delays, and administrative bottlenecks worldwide.',
+      approach: 'Designed an open-vocabulary Handwritten Text Recognition (HTR) pipeline utilizing Microsoft TrOCR (Vision Transformer) with autoregressive decoders that directly process 2D image patches without relying on closed character dictionaries. Structured the extracted clinical entities (drugs, dosages, frequencies) into standardized JSON schemas with a Human-In-The-Loop (HITL) confidence scoring safeguard.',
+      outcome: 'Demonstrated reliable zero-shot transcription of cursive medical crops, bridging physical paper prescriptions into actionable electronic medical records (EMR) while maintaining clinical safety boundaries.',
+      tech: ['Python 3.12', 'PyTorch', 'Hugging Face Transformers (TrOCR)', 'Streamlit UI', 'HITL System'],
+      links: [
+        { label: 'Explore GitHub Profile', url: 'https://github.com/mostafaeltaweel', external: true, primary: true }
+      ]
+    },
+    'emolens': {
+      title: 'EmoLens — Facial Emotion Recognition',
+      category: 'Computer Vision & Deep Learning',
+      problem: 'Detecting subtle facial micro-expressions in real-time requires high spatial sensitivity while handling adverse real-world conditions like head tilts, occlusions, and varying webcam lighting.',
+      approach: 'Integrated an EfficientNet-B3 backbone with Convolutional Block Attention Modules (CBAM) to dynamically weight salient facial landmarks (eyes, brows, mouth contours). Implemented dataset deduplication and temperature scaling confidence calibration, wrapping the model in an interactive Streamlit application with live webcam and video stream inference.',
+      outcome: 'Delivered an interactive AI product capable of real-time sub-45ms latency inference across 7 emotional states, demonstrating end-to-end model training, deployment, and practical UX design.',
+      tech: ['EfficientNet-B3', 'CBAM Attention', 'PyTorch', 'Streamlit', 'OpenCV'],
+      links: [
+        { label: 'Launch Live Streamlit App', url: 'https://facial-emotion-recognition-m.streamlit.app/', external: true, primary: true }
+      ]
+    },
+    'powerbi-survey': {
+      title: 'Data Professional Global Survey Analytics',
+      category: 'Business Intelligence & Salary Insights',
+      problem: 'Understanding global salary distributions, tool adoption (Power BI vs Tableau vs Python), and job satisfaction across 630+ data professionals requires multidimensional filtering.',
+      approach: 'Designed an interactive Power BI dashboard featuring dynamic role-based compensation benchmarking, geographic satisfaction distribution, and drill-through capabilities.',
+      outcome: 'A reusable BI asset presenting benchmark market insights for aspiring data professionals and engineering managers.',
+      tech: ['Power BI Desktop', 'DAX', 'Data Visualization', 'Walkthrough Video'],
+      links: [
+        { label: 'Watch Video Walkthrough', action: 'video', videoSrc: 'assets/videos/powerbi-survey-demo.mp4', primary: true }
+      ]
+    }
+  };
+
+  // ==========================================
+  // PROJECT FILTERING
+  // ==========================================
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    });
+  });
+
+  // ==========================================
+  // VIDEO WALKTHROUGH MODAL
+  // ==========================================
+  const videoModal = document.getElementById('video-modal');
+  const videoPlayer = document.getElementById('modal-video-player');
+  const closeVideoBtn = document.getElementById('video-modal-close');
+  const videoModalTitle = document.getElementById('video-modal-title');
+  const videoModalDesc = document.getElementById('video-modal-desc');
+
+  function openVideoModal(videoSrc, title = 'Project Video Walkthrough', desc = '') {
+    if (!videoModal || !videoPlayer) return;
+    videoPlayer.src = videoSrc;
+    if (videoModalTitle) videoModalTitle.textContent = title;
+    if (videoModalDesc) videoModalDesc.textContent = desc;
+
+    videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    hamburger.setAttribute('aria-expanded', 'true');
-    hamburger.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    hamburger.children[1].style.opacity   = '0';
-    hamburger.children[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    videoPlayer.play().catch(() => {});
   }
-}
-if (hamburger) hamburger.addEventListener('click', () => toggleMobileMenu());
-mobileLinks.forEach(link => link.addEventListener('click', () => toggleMobileMenu(true)));
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && mobileNav?.classList.contains('open')) {
-    toggleMobileMenu(true);
-    hamburger.focus();
+
+  function closeVideoModal() {
+    if (!videoModal || !videoPlayer) return;
+    videoPlayer.pause();
+    videoPlayer.removeAttribute('src');
+    videoModal.classList.remove('active');
+    document.body.style.overflow = '';
   }
-});
 
-/* ===================== CAPABILITY ACCORDION ===================== */
-document.querySelectorAll('.capability-trigger').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const item = trigger.closest('.capability-item');
-    const panel = document.getElementById(trigger.getAttribute('aria-controls'));
-    const willOpen = trigger.getAttribute('aria-expanded') !== 'true';
-
-    document.querySelectorAll('.capability-trigger').forEach(otherTrigger => {
-      const otherItem = otherTrigger.closest('.capability-item');
-      const otherPanel = document.getElementById(otherTrigger.getAttribute('aria-controls'));
-      otherTrigger.setAttribute('aria-expanded', 'false');
-      otherItem.classList.remove('is-open');
-      otherTrigger.querySelector('.capability-toggle').textContent = '+';
-      otherPanel.hidden = true;
+  document.querySelectorAll('[data-video-target]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = btn.getAttribute('data-video-target');
+      const card = btn.closest('.project-card');
+      const title = card ? card.querySelector('.project-title')?.textContent : 'Project Walkthrough';
+      openVideoModal(src, title);
     });
-
-    if (willOpen) {
-      trigger.setAttribute('aria-expanded', 'true');
-      item.classList.add('is-open');
-      trigger.querySelector('.capability-toggle').textContent = '−';
-      panel.hidden = false;
-    }
   });
-});
 
-/* ===================== SCROLL REVEAL ===================== */
-const revealEls = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window && !reduceMotion) {
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
-} else {
-  revealEls.forEach(el => el.classList.add('visible'));
-}
-
-/* ===================== STAT COUNTERS ===================== */
-function animateCounter(el) {
-  const start  = performance.now();
-  const dur    = 2000;
-  function tick(now) {
-    const target = parseInt(el.getAttribute('data-target'));
-    const p = Math.min((now - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - p, 4);
-    el.textContent = Math.floor(ease * target);
-    if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = target;
-  }
-  requestAnimationFrame(tick);
-}
-const statGroups = document.querySelectorAll('.intro-stats');
-if (reduceMotion || !('IntersectionObserver' in window)) {
-  statGroups.forEach(group => group.querySelectorAll('[data-target]').forEach(el => {
-    el.textContent = el.getAttribute('data-target');
-  }));
-} else {
-  const counterObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('[data-target]').forEach(animateCounter);
-        counterObs.unobserve(e.target);
-      }
+  if (closeVideoBtn) closeVideoBtn.addEventListener('click', closeVideoModal);
+  if (videoModal) {
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeVideoModal();
     });
-  }, { threshold: 0.4 });
-  statGroups.forEach(el => counterObs.observe(el));
-}
+  }
 
-/* ===================== SMOOTH ANCHOR SCROLL ===================== */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const selector = a.getAttribute('href');
-    e.preventDefault();
-    if (selector === '#') {
-      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-      toggleMobileMenu(true);
-      return;
-    }
-    const target = document.querySelector(selector);
-    if (target) {
-      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-      toggleMobileMenu(true);
-    }
-  });
-});
+  // ==========================================
+  // CASE STUDY MODAL (STAR FRAMEWORK)
+  // ==========================================
+  const caseModal = document.getElementById('case-modal');
+  const closeCaseBtn = document.getElementById('case-modal-close');
+  const caseCategoryEl = document.getElementById('case-category');
+  const caseTitleEl = document.getElementById('case-title');
+  const caseProblemEl = document.getElementById('case-problem');
+  const caseApproachEl = document.getElementById('case-approach');
+  const caseOutcomeEl = document.getElementById('case-outcome');
+  const caseLinksEl = document.getElementById('case-links');
 
-/* ===================== CONTACT FORM (Formspree) ===================== */
-const form = document.getElementById('contact-form');
-if (form) {
-  const btn = document.getElementById('contact-submit-btn');
-  const btnLabel = btn.querySelector('.btn-label');
-  const status = document.getElementById('contact-form-status');
+  function openCaseModal(caseId) {
+    const data = caseStudies[caseId];
+    if (!data || !caseModal) return;
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const CONTACT_EMAIL = form.getAttribute('action').replace(/^mailto:/, '');
+    if (caseCategoryEl) caseCategoryEl.textContent = data.category;
+    if (caseTitleEl) caseTitleEl.textContent = data.title;
+    if (caseProblemEl) caseProblemEl.textContent = data.problem;
+    if (caseApproachEl) caseApproachEl.textContent = data.approach;
+    if (caseOutcomeEl) caseOutcomeEl.textContent = data.outcome;
 
-    // Static-site fallback: open a pre-filled email without pretending it was sent.
-    if (form.dataset.emailFallback === 'true') {
-      const data = new FormData(form);
-      const subject = encodeURIComponent(data.get('subject') || 'Portfolio enquiry');
-      const body = encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`);
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-      status.textContent = 'Your email app has been opened with the message ready to send.';
-      status.className = 'contact-form-status success';
-      return;
-    }
+    if (caseLinksEl) {
+      caseLinksEl.innerHTML = data.links.map(link => {
+        if (link.action === 'video') {
+          return `<button type="button" class="btn-card-primary" data-video-target="${link.videoSrc}">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    ${link.label}
+                  </button>`;
+        } else {
+          const cls = link.primary ? 'btn-card-primary' : 'btn-card-glass';
+          const downloadAttr = link.download ? 'download' : '';
+          const targetAttr = link.external ? 'target="_blank" rel="noopener noreferrer"' : '';
+          return `<a href="${link.url}" ${downloadAttr} ${targetAttr} class="${cls}">
+                    ${link.label}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>`;
+        }
+      }).join('');
 
-    const origLabel = btnLabel.textContent;
-    btn.disabled = true;
-    btnLabel.textContent = 'Sending…';
-    status.textContent = '';
-    status.className = 'contact-form-status';
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+      caseLinksEl.querySelectorAll('[data-video-target]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          closeCaseModal();
+          openVideoModal(btn.getAttribute('data-video-target'));
+        });
       });
-
-      if (res.ok) {
-        btnLabel.textContent = 'Message Sent ✓';
-        status.textContent = 'Thanks — your message is on its way. I\'ll reply soon.';
-        status.className = 'contact-form-status success';
-        form.reset();
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (err) {
-      status.textContent = `Something went wrong — please email me directly at ${CONTACT_EMAIL}.`;
-      status.className = 'contact-form-status error';
-    } finally {
-      setTimeout(() => {
-        btn.disabled = false;
-        btnLabel.textContent = origLabel;
-      }, 3000);
     }
-  });
-}
 
-/* ===================== HERO SLIDE-UP (fallback) ===================== */
-document.querySelectorAll('.hero-name span').forEach((span, i) => {
-  span.style.animationDelay = (0.3 + i * 0.15) + 's';
-});
-
-/* ===================== PROJECT CARD TILT ===================== */
-if (finePointer && !reduceMotion) document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width  - 0.5;
-    const y = (e.clientY - rect.top)  / rect.height - 0.5;
-    card.style.transform = `perspective(800px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) scale(1.01)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
-
-/* ===================== SECTION HEADER PARALLAX ===================== */
-if (!reduceMotion) window.addEventListener('scroll', () => {
-  const hero = document.getElementById('hero');
-  if (hero) {
-    const img = hero.querySelector('.hero-photo img');
-    if (img) img.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+    caseModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
-});
 
-/* ===================== CERTIFICATIONS FILTER ===================== */
-const certFilters = document.querySelectorAll('.cert-filter');
-const certCards = document.querySelectorAll('.cert-card');
+  function closeCaseModal() {
+    if (!caseModal) return;
+    caseModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-certFilters.forEach(btn => btn.setAttribute('aria-pressed', String(btn.classList.contains('active'))));
-
-certFilters.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Update active tab
-    certFilters.forEach(b => b.classList.remove('active'));
-    certFilters.forEach(b => b.setAttribute('aria-pressed', 'false'));
-    btn.classList.add('active');
-    btn.setAttribute('aria-pressed', 'true');
-
-    const filter = btn.getAttribute('data-filter');
-
-    certCards.forEach(card => {
-      if (filter === 'all' || card.getAttribute('data-issuer') === filter) {
-        card.classList.remove('hidden');
-        card.removeAttribute('hidden');
-        card.style.animation = 'certFadeIn 0.4s ease forwards';
-      } else {
-        card.classList.add('hidden');
-        card.setAttribute('hidden', '');
-        card.style.animation = '';
-      }
+  document.querySelectorAll('[data-case-target]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = btn.getAttribute('data-case-target');
+      openCaseModal(id);
     });
   });
-});
 
-// Add fadeIn animation
-const certStyle = document.createElement('style');
-certStyle.textContent = `
-  @keyframes certFadeIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+  if (closeCaseBtn) closeCaseBtn.addEventListener('click', closeCaseModal);
+  if (caseModal) {
+    caseModal.addEventListener('click', (e) => {
+      if (e.target === caseModal) closeCaseModal();
+    });
   }
-`;
-document.head.appendChild(certStyle);
 
-/* ===================== ACTIVE NAV SECTION ===================== */
-const pageSections = document.querySelectorAll('section[id]');
-const desktopNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-if ('IntersectionObserver' in window) {
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      desktopNavLinks.forEach(link => {
-        const active = link.getAttribute('href') === `#${entry.target.id}`;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
+  // Close modals on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeVideoModal();
+      closeCaseModal();
+    }
+  });
+
+  // ==========================================
+  // MOBILE NAVIGATION
+  // ==========================================
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const siteNav = document.getElementById('site-nav');
+
+  if (mobileToggle && siteNav) {
+    mobileToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('mobile-open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('mobile-open');
       });
     });
-  }, { rootMargin: '-35% 0px -55% 0px' });
-  pageSections.forEach(section => sectionObserver.observe(section));
-}
+  }
+
+});
