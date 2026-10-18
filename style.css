@@ -311,32 +311,110 @@ button {
   align-items: center;
 }
 
-/* Circular Profile Ring */
-.hero-avatar-ring {
+/* ==========================================================================
+   INTERACTIVE REACTIVE HERO AVATAR
+   ========================================================================== */
+.hero-avatar-container {
   position: relative;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  padding: 5px;
-  background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 70%, transparent 100%);
-  border: 2px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.12);
-  margin-bottom: 1.75rem;
-  transition: all var(--transition-medium);
-}
-.hero-avatar-ring:hover {
-  border-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 25px 55px -10px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 255, 255, 0.2);
-  transform: scale(1.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  perspective: 1000px;
 }
 
-.hero-avatar-ring img {
+/* Floating Reactive Speech Bubble */
+.avatar-reaction-bubble {
+  position: absolute;
+  top: -46px;
+  background: rgba(18, 18, 18, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  padding: 0.42rem 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 20;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: floatBubble 4s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+.avatar-reaction-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: rgba(18, 18, 18, 0.88) transparent;
+  display: block;
+  width: 0;
+}
+
+@keyframes floatBubble {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* Avatar Ring with 3D Tilt */
+.hero-avatar-ring {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  padding: 4px;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 30%), rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.06) 65%, transparent 100%);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+  user-select: none;
+  overflow: hidden;
+}
+.hero-avatar-ring:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.25);
+}
+
+.hero-avatar-img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 12%;
-  background: #090a0f;
+  object-position: center 10%;
+  transition: transform 0.35s ease;
+  pointer-events: none;
+}
+.hero-avatar-ring:hover .hero-avatar-img {
+  transform: scale(1.04);
+}
+
+/* Status Badge */
+.avatar-status-badge {
+  position: absolute;
+  bottom: -10px;
+  background: rgba(12, 12, 12, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.85rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  z-index: 15;
 }
 
 /* Availability Pill */
@@ -1035,24 +1113,45 @@ button {
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-medium);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .edu-cert-card:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.06);
+}
+.edu-cert-card:hover .edu-cert-badge {
+  color: #ffffff;
 }
 
 .edu-cert-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-medium);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #fff;
+  padding: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+.edu-cert-icon.degree-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-medium);
+  color: #ffffff;
+  box-shadow: none;
+}
+.edu-cert-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .edu-cert-info h4 {

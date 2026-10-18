@@ -261,4 +261,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // CUSTOMER INTERACTIVE AVATAR (REACTIVE 3D & SPEECH)
+  // ==========================================
+  const avatarRing = document.getElementById('hero-avatar-ring');
+  const avatarBubble = document.getElementById('avatar-reaction-bubble');
+  const bubbleText = avatarBubble ? avatarBubble.querySelector('.bubble-text') : null;
+  const bubbleEmoji = avatarBubble ? avatarBubble.querySelector('.bubble-emoji') : null;
+
+  const reactions = [
+    { emoji: '👋', text: 'Hi! Looking for an analytical problem solver?' },
+    { emoji: '💼', text: 'Open for Junior Data Analyst & BI Roles!' },
+    { emoji: '📊', text: '119K+ hotel bookings & 1.05M fraud records audited' },
+    { emoji: '⚡', text: 'Ask me about my autonomous AI agent pipelines!' },
+    { emoji: '💬', text: 'Let\'s chat! Click to message me directly' }
+  ];
+  let reactionIndex = 0;
+
+  if (avatarRing && avatarBubble) {
+    // 3D Parallax Tilt tracking customer cursor
+    avatarRing.addEventListener('mousemove', (e) => {
+      const rect = avatarRing.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -16;
+      const rotateY = ((x - centerX) / centerX) * 16;
+
+      avatarRing.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
+      avatarRing.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+      avatarRing.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    avatarRing.addEventListener('mouseleave', () => {
+      avatarRing.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      avatarRing.style.setProperty('--mouse-x', '50%');
+      avatarRing.style.setProperty('--mouse-y', '30%');
+      if (bubbleEmoji && bubbleText) {
+        bubbleEmoji.textContent = '👋';
+        bubbleText.textContent = 'Hi! Need an analytical problem solver?';
+        avatarBubble.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+      }
+    });
+
+    // Hover greeting to invite customer
+    avatarRing.addEventListener('mouseenter', () => {
+      if (bubbleText && bubbleEmoji) {
+        bubbleEmoji.textContent = '💬';
+        bubbleText.textContent = 'Click to chat with Mostafa or switch cards!';
+        avatarBubble.style.borderColor = 'rgba(16, 185, 129, 0.6)';
+      }
+    });
+
+    // Click reaction cycle
+    avatarRing.addEventListener('click', () => {
+      reactionIndex = (reactionIndex + 1) % reactions.length;
+      if (bubbleText && bubbleEmoji) {
+        bubbleEmoji.textContent = reactions[reactionIndex].emoji;
+        bubbleText.textContent = reactions[reactionIndex].text;
+      }
+      avatarRing.style.transform = 'perspective(800px) scale(0.95)';
+      setTimeout(() => {
+        avatarRing.style.transform = 'perspective(800px) scale(1.06)';
+      }, 140);
+    });
+
+    if (avatarBubble) {
+      avatarBubble.addEventListener('click', () => {
+        window.open('https://wa.me/201112611898?text=Hello%20Mostafa,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect.', '_blank');
+      });
+    }
+  }
+
 });

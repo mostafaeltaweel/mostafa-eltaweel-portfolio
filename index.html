@@ -73,9 +73,18 @@
          ========================================== -->
     <section class="hero-minimal" id="hero">
       <div class="container hero-content">
-        <!-- Circular Profile Ring -->
-        <div class="hero-avatar-ring">
-          <img src="assets/images/portrait.png" alt="Mostafa Mohamed — Data Analyst">
+        <!-- Interactive Reactive Profile Component -->
+        <div class="hero-avatar-container" id="hero-avatar-container">
+          <!-- Floating Interactive Speech Bubble -->
+          <div class="avatar-reaction-bubble" id="avatar-reaction-bubble" role="status" aria-live="polite" title="Click to wave!">
+            <span class="bubble-emoji">👋</span>
+            <span class="bubble-text">Hi! Need an analytical problem solver?</span>
+          </div>
+
+          <!-- Circular Reactive Ring with 3D Parallax & Ambient Aura -->
+          <div class="hero-avatar-ring" id="hero-avatar-ring" tabindex="0" role="button" aria-label="Mostafa Mohamed profile photo. Click to interact!">
+            <img src="assets/images/portrait.png" alt="Mostafa Mohamed — Data Analyst" class="hero-avatar-img" id="hero-avatar-img">
+          </div>
         </div>
 
         <!-- Availability Indicator -->
@@ -292,9 +301,9 @@
             </div>
             <div class="cat-tags-cloud">
               <span class="peaceful-tag"><strong>Power BI</strong> Desktop &amp; Service</span>
-              <span class="peaceful-tag"><strong>DAX</strong> Complex Measures</span>
-              <span class="peaceful-tag"><strong>Star Schema</strong> Modeling</span>
-              <span class="peaceful-tag"><strong>Power Query</strong> / M</span>
+              <span class="peaceful-tag"><strong>DAX</strong> Measures &amp; Calculations</span>
+              <span class="peaceful-tag"><strong>Data Cleaning</strong> (Power Query / ETL)</span>
+              <span class="peaceful-tag"><strong>Data Modeling</strong> (Star Schema)</span>
               <span class="peaceful-tag"><strong>PL-300</strong> Microsoft Certified</span>
               <span class="peaceful-tag"><strong>Excel</strong> Financial Models</span>
             </div>
@@ -310,11 +319,11 @@
             </div>
             <div class="cat-tags-cloud">
               <span class="peaceful-tag"><strong>SQL Server</strong> (T-SQL)</span>
-              <span class="peaceful-tag"><strong>PostgreSQL</strong></span>
-              <span class="peaceful-tag"><strong>Window Functions</strong></span>
-              <span class="peaceful-tag"><strong>CTEs &amp; Joins</strong></span>
-              <span class="peaceful-tag"><strong>Data Aggregations</strong></span>
-              <span class="peaceful-tag"><strong>ETL Pipelines</strong></span>
+              <span class="peaceful-tag"><strong>SELECT Queries</strong> &amp; Views</span>
+              <span class="peaceful-tag"><strong>JOINs, CTEs</strong> &amp; Subqueries</span>
+              <span class="peaceful-tag"><strong>Data Aggregations</strong> &amp; Grouping</span>
+              <span class="peaceful-tag"><strong>Database Schema</strong> Design</span>
+              <span class="peaceful-tag"><strong>PostgreSQL</strong> &amp; MySQL</span>
             </div>
           </div>
 
@@ -327,12 +336,12 @@
               <h3 class="cat-title">Python &amp; AI Engineering</h3>
             </div>
             <div class="cat-tags-cloud">
-              <span class="peaceful-tag"><strong>Python 3.12</strong></span>
-              <span class="peaceful-tag"><strong>Pandas &amp; NumPy</strong></span>
+              <span class="peaceful-tag"><strong>Python 3.12</strong> Core</span>
+              <span class="peaceful-tag"><strong>Pandas &amp; NumPy</strong> (EDA)</span>
+              <span class="peaceful-tag"><strong>Computer Vision</strong> (OpenCV)</span>
               <span class="peaceful-tag"><strong>PyTorch</strong> Deep Learning</span>
               <span class="peaceful-tag"><strong>Groq / Llama 3</strong> APIs</span>
-              <span class="peaceful-tag"><strong>Computer Vision</strong> (OpenCV)</span>
-              <span class="peaceful-tag"><strong>Streamlit</strong> App Delivery</span>
+              <span class="peaceful-tag"><strong>Streamlit</strong> Cloud Apps</span>
             </div>
           </div>
 
@@ -346,11 +355,11 @@
             </div>
             <div class="cat-tags-cloud">
               <span class="peaceful-tag"><strong>n8n</strong> Multi-Agent Pipelines</span>
-              <span class="peaceful-tag"><strong>Webhooks &amp; REST APIs</strong></span>
+              <span class="peaceful-tag"><strong>Git &amp; Git Bash</strong> (CLI)</span>
+              <span class="peaceful-tag"><strong>Webhooks</strong> &amp; REST APIs</span>
               <span class="peaceful-tag"><strong>JSON Schema</strong> Validation</span>
-              <span class="peaceful-tag"><strong>Google Sheets CRM</strong></span>
-              <span class="peaceful-tag"><strong>Git &amp; GitHub</strong></span>
-              <span class="peaceful-tag"><strong>Automated Alerts</strong></span>
+              <span class="peaceful-tag"><strong>Google Sheets</strong> Mini CRM</span>
+              <span class="peaceful-tag"><strong>Automated Alerts</strong> (Telegram)</span>
             </div>
           </div>
         </div>
@@ -689,55 +698,80 @@
         </div>
 
         <div class="timeline-peaceful">
+          <!-- Role 1: ITechPro-eg -->
           <div class="timeline-entry">
             <span class="timeline-dot"></span>
             <div class="timeline-card">
               <div class="timeline-header">
                 <div>
-                  <h3 class="timeline-role">Commercial Data Analyst &amp; ERP Support Specialist</h3>
-                  <div class="timeline-company">Enterprise Commercial Operations</div>
+                  <h3 class="timeline-role">Applied AI Engineer Intern</h3>
+                  <div class="timeline-company">ITechPro-eg · Cairo, Egypt</div>
                 </div>
-                <div class="timeline-period">2023 — Present</div>
+                <div class="timeline-period">Sep 2026 — Present</div>
               </div>
               <ul class="timeline-list">
-                <li>Interrogated operational transaction logs to isolate cancellation drivers and revenue anomalies across hospitality and finance workflows.</li>
-                <li>Designed executive Power BI dashboards with DAX time-intelligence, tracking lead times, cancellation velocity, and customer payment methods.</li>
-                <li>Supported ERP business users with SQL query diagnostics, data normalization, and structured reporting deliverables.</li>
+                <li>Utilized AI-assisted engineering (Vibe Coding) and Generative AI to rapidly prototype functional data-driven software solutions.</li>
+                <li>Analyzed business data and project requirements, translating them into structured AI prompts, schemas, and diagnostic pipelines.</li>
+                <li>Built automated workflows (n8n, Python) to streamline repetitive data operations and reduce operational latency.</li>
+                <li>Tested and validated analytical model outputs to ensure precision, reliability, and business objective alignment.</li>
               </ul>
             </div>
           </div>
 
+          <!-- Role 2: Digilians MTC & MCIT -->
           <div class="timeline-entry">
             <span class="timeline-dot"></span>
             <div class="timeline-card">
               <div class="timeline-header">
                 <div>
-                  <h3 class="timeline-role">Junior BI &amp; Applied AI Solutions Engineer</h3>
-                  <div class="timeline-company">Independent Technical Consultations</div>
+                  <h3 class="timeline-role">Applied AI &amp; Data Analysis Specialist</h3>
+                  <div class="timeline-company">Digilians (الرواد الرقميون) · MTC &amp; MCIT Initiative</div>
                 </div>
-                <div class="timeline-period">2022 — 2023</div>
+                <div class="timeline-period">Oct 2025 — Aug 2026 (11 mos)</div>
               </div>
               <ul class="timeline-list">
-                <li>Architected 4 autonomous n8n automation pipelines connecting Groq LLMs with CRM sheets, cutting lead qualification latency from hours to under 30 seconds.</li>
-                <li>Engineered and deployed deep learning vision models on Streamlit Cloud for automated electricity theft risk detection and facial emotion recognition.</li>
-                <li>Authored Python data extraction and cleaning scripts processing 1M+ rows with Pandas and NumPy.</li>
+                <li>Executed comprehensive data cleaning, transformation, and statistical modeling on high-volume real-world datasets.</li>
+                <li>Utilized Power BI, SQL, and Excel to architect executive dashboards, KPIs, and diagnostic business reports.</li>
+                <li>Engineered machine learning pipelines (Scikit-Learn, PyTorch, Computer Vision) for predictive pattern extraction.</li>
+                <li>Contributed to data-driven decision making and workflow automation across digital innovation initiatives.</li>
               </ul>
             </div>
           </div>
 
+          <!-- Role 3: DewanSoft ERP -->
           <div class="timeline-entry">
             <span class="timeline-dot"></span>
             <div class="timeline-card">
               <div class="timeline-header">
                 <div>
-                  <h3 class="timeline-role">Legal Research &amp; Critical Analysis Foundation</h3>
+                  <h3 class="timeline-role">ERP Technical Support Specialist</h3>
+                  <div class="timeline-company">DewanSoft · Enterprise Systems</div>
+                </div>
+                <div class="timeline-period">Jan 2025 — Sep 2025 (9 mos)</div>
+              </div>
+              <ul class="timeline-list">
+                <li>Provided enterprise ERP technical support, diagnosing database inconsistencies, user permissions, and SQL data queries.</li>
+                <li>Prepared and structured operational business data for management reporting, directly improving data accuracy.</li>
+                <li>Collaborated across finance and inventory departments to optimize data workflows and eliminate reporting bottlenecks.</li>
+                <li>Documented and standardized system procedures to ensure efficient, compliant enterprise ERP operations.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 4: Legal Foundation -->
+          <div class="timeline-entry">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Legal Research &amp; Critical Evidence Analysis</h3>
                   <div class="timeline-company">Faculty of Law — Cairo University</div>
                 </div>
-                <div class="timeline-period">2018 — 2022</div>
+                <div class="timeline-period">Sep 2019 — Jul 2022</div>
               </div>
               <ul class="timeline-list">
-                <li>Trained in formal evidence evaluation, identifying statutory contradictions, and constructing watertight causal arguments.</li>
-                <li>Transferred legal-grade critical reasoning to data analytics: treating raw numbers as evidence and validating assumptions before drawing business conclusions.</li>
+                <li>Trained in formal evidence interrogation, statutory interpretation, and eliminating confirmation bias.</li>
+                <li>Transferred legal-grade critical methodology to data analytics: treating raw tables as evidence and validating causal claims before drawing business conclusions.</li>
               </ul>
             </div>
           </div>
@@ -760,32 +794,65 @@
 
         <div class="edu-cert-grid">
           <!-- Cert 1: PL-300 -->
-          <div class="edu-cert-card">
+          <a href="https://learn.microsoft.com/en-us/users/mostafamohamedeltaweel-0210/credentials/b5d4c2c72a13d32" target="_blank" rel="noopener noreferrer" class="edu-cert-card" title="Verify Microsoft PL-300 Credential">
             <div class="edu-cert-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <img src="assets/images/microsoft-logo.png" alt="Microsoft">
             </div>
             <div class="edu-cert-info">
-              <h4>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</h4>
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem;">
+                <h4>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</h4>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink: 0; color: var(--text-muted); margin-top: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </div>
               <div class="edu-cert-issuer">Microsoft Credential Verification</div>
-              <span class="edu-cert-badge">Official Microsoft Certification</span>
+              <span class="edu-cert-badge">Verify Official Microsoft Credential ↗</span>
             </div>
-          </div>
+          </a>
 
           <!-- Cert 2: Google Data Analytics -->
-          <div class="edu-cert-card">
+          <a href="https://www.coursera.org/account/accomplishments/professional-cert/XMKR1FA09WQD" target="_blank" rel="noopener noreferrer" class="edu-cert-card" title="Verify Google Data Analytics Credential">
             <div class="edu-cert-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+              <img src="assets/images/google-logo.png" alt="Google">
             </div>
             <div class="edu-cert-info">
-              <h4>Google Data Analytics Professional Certificate</h4>
-              <div class="edu-cert-issuer">Google Career Certificates</div>
-              <span class="edu-cert-badge">Verified Credential</span>
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem;">
+                <h4>Google Data Analytics Professional Certificate</h4>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink: 0; color: var(--text-muted); margin-top: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </div>
+              <div class="edu-cert-issuer">Google Career Certificates (Coursera)</div>
+              <span class="edu-cert-badge">Verify Official Google Credential ↗</span>
+            </div>
+          </a>
+
+          <!-- Cert 3: IBM Machine Learning -->
+          <a href="https://www.coursera.org/account/accomplishments/verify/2UABLVCGZBDC" target="_blank" rel="noopener noreferrer" class="edu-cert-card" title="Verify IBM Machine Learning Credential">
+            <div class="edu-cert-icon">
+              <img src="assets/images/ibm-logo.png" alt="IBM">
+            </div>
+            <div class="edu-cert-info">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem;">
+                <h4>Machine Learning with Python</h4>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink: 0; color: var(--text-muted); margin-top: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </div>
+              <div class="edu-cert-issuer">IBM (Coursera)</div>
+              <span class="edu-cert-badge">Verify Official IBM Credential ↗</span>
+            </div>
+          </a>
+
+          <!-- Cert 4: Digilians Diploma -->
+          <div class="edu-cert-card">
+            <div class="edu-cert-icon">
+              <img src="assets/images/digilians-logo.png" alt="Digilians">
+            </div>
+            <div class="edu-cert-info">
+              <h4>Applied AI &amp; Data Analysis Professional Diploma</h4>
+              <div class="edu-cert-issuer">Digilians (الرواد الرقميون) · MTC &amp; MCIT Initiative</div>
+              <span class="edu-cert-badge">11 Months Intensive Program · Practical Applied AI &amp; BI</span>
             </div>
           </div>
 
-          <!-- Degree: Cairo Law -->
+          <!-- Degree 5: Cairo Law -->
           <div class="edu-cert-card">
-            <div class="edu-cert-icon">
+            <div class="edu-cert-icon degree-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <div class="edu-cert-info">
