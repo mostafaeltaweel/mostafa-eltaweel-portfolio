@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   let reactionIndex = 0;
 
-  if (avatarRing && avatarBubble) {
+  if (avatarRing) {
     // 3D Parallax Tilt tracking customer cursor
     avatarRing.addEventListener('mousemove', (e) => {
       const rect = avatarRing.getBoundingClientRect();
@@ -287,12 +287,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -16;
-      const rotateY = ((x - centerX) / centerX) * 16;
+      const rotateX = ((y - centerY) / centerY) * -14;
+      const rotateY = ((x - centerX) / centerX) * 14;
 
       avatarRing.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
       avatarRing.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
-      avatarRing.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      avatarRing.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
     });
 
     avatarRing.addEventListener('mouseleave', () => {
@@ -302,29 +302,23 @@ document.addEventListener('DOMContentLoaded', () => {
       if (bubbleEmoji && bubbleText) {
         bubbleEmoji.textContent = '👋';
         bubbleText.textContent = 'Hi! Need an analytical problem solver?';
-        avatarBubble.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+        if (avatarBubble) avatarBubble.style.borderColor = 'rgba(255, 255, 255, 0.18)';
       }
     });
 
-    // Hover greeting to invite customer
     avatarRing.addEventListener('mouseenter', () => {
       if (bubbleText && bubbleEmoji) {
         bubbleEmoji.textContent = '💬';
         bubbleText.textContent = 'Click to chat with Mostafa or switch cards!';
-        avatarBubble.style.borderColor = 'rgba(16, 185, 129, 0.6)';
+        if (avatarBubble) avatarBubble.style.borderColor = 'rgba(16, 185, 129, 0.6)';
       }
     });
 
-    // Click reaction cycle
+    // Click micro bounce
     avatarRing.addEventListener('click', () => {
-      reactionIndex = (reactionIndex + 1) % reactions.length;
-      if (bubbleText && bubbleEmoji) {
-        bubbleEmoji.textContent = reactions[reactionIndex].emoji;
-        bubbleText.textContent = reactions[reactionIndex].text;
-      }
-      avatarRing.style.transform = 'perspective(800px) scale(0.95)';
+      avatarRing.style.transform = 'perspective(800px) scale(0.96)';
       setTimeout(() => {
-        avatarRing.style.transform = 'perspective(800px) scale(1.06)';
+        avatarRing.style.transform = 'perspective(800px) scale(1.04)';
       }, 140);
     });
 

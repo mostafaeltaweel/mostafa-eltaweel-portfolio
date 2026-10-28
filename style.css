@@ -367,10 +367,10 @@ button {
 /* Avatar Ring with 3D Tilt */
 .hero-avatar-ring {
   position: relative;
-  width: 175px;
-  height: 175px;
+  width: clamp(210px, 24vw, 240px);
+  height: clamp(210px, 24vw, 240px);
   border-radius: 50%;
-  padding: 4px;
+  padding: 5px;
   background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 30%), rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.06) 65%, transparent 100%);
   border: 2px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.12);
