@@ -367,10 +367,10 @@ button {
 /* Avatar Ring with 3D Tilt */
 .hero-avatar-ring {
   position: relative;
-  width: clamp(210px, 24vw, 240px);
-  height: clamp(210px, 24vw, 240px);
+  width: clamp(260px, 28vw, 295px);
+  height: clamp(260px, 28vw, 295px);
   border-radius: 50%;
-  padding: 5px;
+  padding: 6px;
   background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 30%), rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.06) 65%, transparent 100%);
   border: 2px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.12);
@@ -390,12 +390,13 @@ button {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 10%;
+  object-position: center 12%;
+  transform: scale(1.15);
   transition: transform 0.35s ease;
   pointer-events: none;
 }
 .hero-avatar-ring:hover .hero-avatar-img {
-  transform: scale(1.04);
+  transform: scale(1.20);
 }
 
 /* Status Badge */
