@@ -417,12 +417,14 @@ button {
   z-index: 15;
 }
 
-/* Availability Pill */
+/* Capability & Tech Stack Pill */
 .hero-availability-pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.35rem 0.95rem;
+  padding: 0.45rem 1.15rem;
   background: var(--bg-glass);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-full);
@@ -430,6 +432,8 @@ button {
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
+  max-width: 95%;
+  line-height: 1.5;
   transition: all var(--transition-fast);
 }
 .hero-availability-pill:hover {

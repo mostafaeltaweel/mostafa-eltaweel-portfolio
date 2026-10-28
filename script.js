@@ -271,10 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reactions = [
     { emoji: '👋', text: 'Hi! Looking for an analytical problem solver?' },
-    { emoji: '💼', text: 'Open for Junior Data Analyst & BI Roles!' },
+    { emoji: '⚡', text: 'Specialized in Applied AI, Workflows & Power BI (PL-300)' },
     { emoji: '📊', text: '119K+ hotel bookings & 1.05M fraud records audited' },
-    { emoji: '⚡', text: 'Ask me about my autonomous AI agent pipelines!' },
-    { emoji: '💬', text: 'Let\'s chat! Click to message me directly' }
+    { emoji: '🤖', text: 'Ask me about my autonomous AI agent pipelines!' },
+    { emoji: '💬', text: 'Let\'s connect! Click to message me directly' }
   ];
   let reactionIndex = 0;
 
